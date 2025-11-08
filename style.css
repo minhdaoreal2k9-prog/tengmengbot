@@ -1,0 +1,285 @@
+/* ======== THIẾT LẬP CHUNG ======== */
+:root {
+    --color-primary: #5865F2; /* Màu Blurple của Discord */
+    --color-secondary: #2C2F33; /* Màu xám tối */
+    --color-background: #1e1e2e; /* Màu nền chính (tối) */
+    --color-surface: #2a2a3a;   /* Màu nền cho các thẻ (card) */
+    --color-text: #F0F0F0;      /* Màu chữ chính (sáng) */
+    --color-text-muted: #99AAB5; /* Màu chữ phụ */
+    --color-green: #43b581;      /* Màu cho gói popular */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ======== HEADER & NAV ======== */
+header {
+    background-color: var(--color-surface);
+    padding: 1rem 0;
+    border-bottom: 1px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header .nav-links a {
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color 0.3s ease;
+}
+
+header .nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ======== NÚT BẤM (BUTTONS) ======== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #FFF;
+}
+
+.btn-primary:hover {
+    background-color: #4752C4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(88, 101, 242, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    border: 1px solid var(--color-text-muted);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-text-muted);
+    color: var(--color-secondary);
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem; /* Nút trên nav nhỏ hơn */
+}
+
+/* ======== PHẦN GIỚI THIỆU CHÍNH (HERO) ======== */
+#hero {
+    padding: 6rem 0;
+    text-align: center;
+    background: linear-gradient(rgba(30, 30, 46, 0.9), rgba(30, 30, 46, 0.9)), url('https://source.unsplash.com/random/1600x900/?abstract,code,technology') no-repeat center center/cover;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #FFF;
+}
+
+#hero .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ======== CÁC PHẦN CHUNG ======== */
+section {
+    padding: 5rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+section .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+}
+
+
+/* ======== TÍNH NĂNG (FEATURES) ======== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.feature-card p {
+    color: var(--color-text-muted);
+}
+
+/* ======== BẢNG GIÁ (PRICING) ======== */
+#pricing {
+    background-color: var(--color-surface);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px; /* Thu hẹp lại để 2 cột nhìn đẹp hơn */
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #444;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative; /* Dùng cho "popular-badge" */
+}
+
+.pricing-card .plan-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.pricing-card .price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 1rem 0;
+}
+
+.pricing-card .currency {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.pricing-card .plan-desc {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card .plan-features {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.pricing-card .plan-features li {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* Gói Popular (Nổi bật) */
+.pricing-card.popular {
+    border: 2px solid var(--color-green);
+    transform: scale(1.05);
+}
+
+.pricing-card .popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-green);
+    color: #FFF;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    background-color: var(--color-secondary);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
