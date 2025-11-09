@@ -1,376 +1,190 @@
-/* Cài đặt chung */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1a1a2e; /* Màu nền xanh đen tối */
-    color: #e0e0e0; /* Màu chữ trắng ngà */
-    margin: 0;
-    line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TengMeng Bot - Dịch vụ Bot ROK</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-}
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">TengMeng Bot</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home (Trang chủ)</a></li>
+                <li class="nav-item"><a href="#pricing" class="nav-link">Shop (Bảng giá)</a></li>
+                <li class="nav-item"><a href="https://discord.gg/uzVS5nbz3t" class="nav-link" target="_blank">Join Discord</a></li>
+                <li class="nav-item"><a href="https://zalo.me/g/oehnep941" class="nav-link" target="_blank">Join Zalo</a></li>
+            </ul>
+        </div>
+    </nav>
 
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #f0b90b; /* Màu vàng ROK */
-    display: inline-block;
-    padding-bottom: 10px;
-}
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>TENGMENG BOT</h1>
+            <p>Giải phóng thời gian của bạn. Tự động ROK, điều khiển 100% qua Discord.</p>
+            <div class="cta-buttons">
+                <a href="https://discord.gg/uzVS5nbz3t" class="cta-button primary">THAM GIA DISCORD</a>
+                <a href="https://zalo.me/g/oehnep941" class="cta-button secondary">THAM GIA NHÓM ZALO</a>
+            </div>
+        </div>
+    </header>
 
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
+    <section class="features-detailed-section">
+        <h2>TÍNH NĂNG ĐẦY ĐỦ</h2>
+        <div class="features-detailed-grid">
+            
+            <div class="feature-category">
+                <h3>🪓 QUẢN LÝ TÀI NGUYÊN</h3>
+                <ul>
+                    <li>Thu thập tài nguyên</li>
+                    <li>Thu thập đá quý</li>
+                    <li>Sản xuất vật liệu</li>
+                    <li>Sản xuất pha lê</li>
+                    <li>Thu tài nguyên trong thành</li>
+                    <li>Dùng tăng tốc sản xuất tài nguyên</li>
+                </ul>
+            </div>
+            
+            <div class="feature-category">
+                <h3>⚔️ CHIẾN ĐẤU & QUÂN SỰ</h3>
+                <ul>
+                    <li>Đánh man rợ</li>
+                    <li>Đánh cướp bóc</li>
+                    <li>Mở rally đánh pháo đài</li>
+                    <li>Tham gia rally</li>
+                    <li>Huấn luyện lính</li>
+                    <li>Chữa lính</li>
+                </ul>
+            </div>
 
-/* 1. THANH MENU (MỚI) */
-.navbar {
-    background-color: #161625; /* Màu nền menu */
-    border-bottom: 1px solid #3a3a5a;
-    padding: 10px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
+            <div class="feature-category">
+                <h3>🤝 HOẠT ĐỘNG LIÊN MINH</h3>
+                <ul>
+                    <li>Hỗ trợ liên minh</li>
+                    <li>Cống hiến liên minh</li>
+                    <li>Nhận quà liên minh</li>
+                    <li>Nhận tài nguyên từ lãnh thổ liên minh</li>
+                </ul>
+            </div>
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+            <div class="feature-category">
+                <h3>☀️ NHIỆM VỤ HÀNG NGÀY</h3>
+                <ul>
+                    <li>Cửa hàng thương nhân bí ẩn</li>
+                    <li>Nhận quà đăng nhập</li>
+                    <li>Nhận quà VIP hằng ngày</li>
+                    <li>Nhận quà viễn chinh hằng ngày</li>
+                    <li>Nhận thưởng cuộn Lucerne</li>
+                    <li>Mở rương miễn phí tại Quán rượu</li>
+                    <li>Mở kho báu hang động</li>
+                </ul>
+            </div>
 
-.nav-logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #f0b90b;
-    text-decoration: none;
-}
+            <div class="feature-category">
+                <h3>⚙️ TIỆN ÍCH HỖ TRỢ</h3>
+                <ul>
+                    <li>Tự động dùng khiên</li>
+                    <li>Tự động đăng nhập lại</li>
+                    <li>Tự động chuyển tài khoản</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
+    <section class="how-it-works-section">
+        <h2>CÁCH THỨC HOẠT ĐỘNG</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>LIÊN HỆ & THANH TOÁN</h3>
+                <p>Tham gia Discord/Zalo. Liên hệ Owner (TengMeng Rise) để thanh toán gói thuê.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>NHẬN ACC (BIND)</h3>
+                <p>Sau khi thanh toán, hãy gửi email liên kết và mã đăng nhập (hoặc mật khẩu) cho Owner để được gán acc.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>ĐIỀU KHIỂN</h3>
+                <p>Vào kênh chat riêng, gõ <code>start</code>, <code>stop</code>, hoặc <code>show</code>. Bot sẽ tự nhận diện và thực thi lệnh.</p>
+            </div>
+        </div>
+    </section>
 
-.nav-link {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-color 0.3s;
-}
+    <section class="commands-section">
+        <h2>CÁC LỆNH CHAT CƠ BẢN</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lệnh (Chat thường)</th>
+                    <th>Chức năng</th>
+                    <th>Delay?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>start</code></td>
+                    <td>Khởi động bot (Kích hoạt AHK).</td>
+                    <td><span class="delay-yes">Có (60s)</span></td>
+                </tr>
+                <tr>
+                    <td><code>stop</code></td>
+                    <td><strong>Dừng bot</strong> (Đóng hoàn toàn tab BlueStacks - Taskkill).</td>
+                    <td><span class="delay-no">Không</span></td>
+                </tr>
+                <tr>
+                    <td><code>show</code></td>
+                    <td><strong>Chụp ảnh màn hình acc của bạn</strong> (Đã cắt) và gửi vào Discord.</td>
+                    <td><span class="delay-no">Không</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-.nav-link:hover {
-    color: #f0b90b;
-    border-bottom-color: #f0b90b;
-}
+    <section class="pricing-section" id="pricing">
+        <h2>GIÁ THUÊ DỊCH VỤ</h2>
+        <div class="pricing-grid">
+            <div class="price-card highlight">
+                <h3>ƯU ĐÃI KHAI TRƯƠNG</h3>
+                <div class="price">500K</div>
+                <div class="duration">THÁNG ĐẦU TIÊN</div>
+            </div>
+            <div class="price-card">
+                <h3>Gói Tuần</h3>
+                <div class="price">150K</div>
+                <div class="duration">/ Tuần</div>
+            </div>
+            <div class="price-card">
+                <h3>Gói Tháng</h3>
+                <div class="price">550K</div>
+                <div class="duration">/ Tháng</div>
+                <p>(Rủ team 5 người sẽ là 500K/Tháng)</p>
+            </div>
+            <div class="price-card">
+                <h3>Gói Quý</h3>
+                <div class="price">1500K</div>
+                <div class="duration">/ 3 Tháng</div>
+            </div>
+            <div class="price-card">
+                <h3>Gói Năm</h3>
+                <div class="price">5500K</div>
+                <div class="duration">/ Năm</div>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer-cta">
+        <h2>SẴN SÀNG ĐỂ BẮT ĐẦU?</h2>
+        <p>Tham gia cộng đồng Discord hoặc Zalo của chúng tôi để đăng ký và trải nghiệm bot ngay hôm nay!</p>
+        <div class="cta-buttons">
+            <a href="https://discord.gg/uzVS5nbz3t" class="cta-button primary">THAM GIA DISCORD</a>
+            <a href="https://zalo.me/g/oehnep941" class="cta-button secondary">THAM GIA NHÓM ZALO</a>
+        </div>
+    </footer>
 
-/* 2. Hero Section */
-.hero-section {
-    /* Thay 'link-anh-nen-rok.jpg' bằng link ảnh nền game ROK của bạn */
-    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/8Qj8mJq.png') no-repeat center center/cover;
-    min-height: 80vh; /* Giảm chiều cao một chút */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #f0b90b; /* Màu vàng ROK */
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Nút CTA (Call to Action) */
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
-}
-
-.cta-button {
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-    border: 2px solid transparent;
-}
-
-.cta-button.primary {
-    background-color: #f0b90b;
-    color: #1a1a2e;
-    border-color: #f0b90b;
-}
-
-.cta-button.primary:hover {
-    background-color: #ffe082;
-    border-color: #ffe082;
-    transform: translateY(-3px);
-}
-
-.cta-button.secondary {
-    background-color: transparent;
-    color: #f0b90b;
-    border-color: #f0b90b;
-}
-
-.cta-button.secondary:hover {
-    background-color: #f0b90b;
-    color: #1a1a2e;
-    transform: translateY(-3px);
-}
-
-
-/* 3. Features Section (Mới) */
-.features-detailed-section {
-    background-color: #161625;
-}
-
-.features-detailed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
-    max-width: 1300px; /* Tăng độ rộng */
-    margin: 40px auto 0;
-    text-align: left;
-}
-
-.feature-category {
-    background-color: #24243e;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 5px solid #f0b90b;
-    transition: transform 0.3s;
-}
-
-.feature-category:hover {
-    transform: translateY(-5px);
-}
-
-.feature-category h3 {
-    color: #f0b90b;
-    margin-top: 0;
-    font-size: 1.4rem;
-}
-
-.feature-category ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style: square;
-}
-
-.feature-category li {
-    margin-bottom: 8px;
-    color: #c0c0d0;
-}
-
-
-/* 4. How It Works */
-.steps-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-
-.step {
-    flex-basis: 30%;
-    min-width: 300px;
-    padding: 20px;
-}
-
-.step-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #f0b90b;
-    border: 2px solid #f0b90b;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0 auto 20px;
-}
-
-/* 5. Bảng Lệnh */
-.commands-section {
-    background-color: #161625;
-}
-
-table {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto 0;
-    border-collapse: collapse;
-    background-color: #24243e;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-th, td {
-    border: 1px solid #4a4a6a;
-    padding: 15px;
-    text-align: left;
-}
-
-th {
-    background-color: #f0b90b;
-    color: #1a1a2e;
-    font-size: 1.1rem;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #1f1f33;
-}
-
-code {
-    background-color: #333;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 1.1rem;
-    color: #f0b90b;
-}
-
-.delay-yes {
-    color: #ff6b6b; /* Màu đỏ */
-    font-weight: 700;
-}
-
-.delay-no {
-    color: #6bff6b; /* Màu xanh */
-    font-weight: 700;
-}
-
-/* 6. Gói Thuê (Mới) */
-.pricing-section {
-    background-color: #1a1a2e;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-
-.price-card {
-    background-color: #24243e;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #4a4a6a;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.price-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-.price-card h3 {
-    font-size: 1.3rem;
-    color: #fff;
-    margin-top: 0;
-}
-
-.price-card .price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #f0b90b;
-    margin: 10px 0;
-}
-
-.price-card .duration {
-    font-size: 1rem;
-    color: #aaa;
-    text-transform: uppercase;
-}
-
-.price-card p {
-    font-size: 0.9rem;
-    color: #c0c0d0;
-    margin-top: 15px;
-}
-
-/* Style cho ưu đãi đặc biệt */
-.price-card.highlight {
-    background-color: #f0b90b;
-    color: #1a1a2e;
-    border-color: #f0b90b;
-    transform: scale(1.05);
-}
-
-.price-card.highlight h3,
-.price-card.highlight .price,
-.price-card.highlight .duration {
-    color: #1a1a2e;
-}
-
-/* 7. Footer */
-.footer-cta {
-    background-color: #161625;
-    padding: 60px 20px;
-}
-
-.footer-cta h2 {
-    border: none;
-}
-
-.footer-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-/* Responsive cho mobile */
-@media (max-width: 768px) {
-    /* Ẩn menu desktop, hiện menu mobile (nếu cần) */
-    .nav-menu {
-        display: none; 
-        /* Bạn sẽ cần thêm Javascript để làm nút hamburger menu */
-    }
-    .nav-logo {
-        text-align: center;
-        width: 100%;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-    .step {
-        flex-basis: 80%;
-    }
-    table {
-        font-size: 0.9rem;
-    }
-    .price-card.highlight {
-        transform: scale(1); /* Tắt phóng to trên mobile */
-    }
-}
+</body>
+</html>
