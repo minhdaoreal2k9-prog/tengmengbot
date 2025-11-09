@@ -428,7 +428,10 @@ code {
         background-color: #161625;
         flex-direction: column; 
         width: 100%;
-        text-align: center;
+        
+        /* === SỬA LỖI CĂN GIỮA === */
+        text-align: left; /* Đổi từ 'center' sang 'left' */
+        
         gap: 0;
         padding: 0;
         border-bottom: 1px solid #3a3a5a;
@@ -436,17 +439,16 @@ code {
     }
     .nav-link {
         display: block; 
-        padding: 15px; 
+        padding: 15px 20px; /* Thêm padding trái 20px */
         border-bottom: 1px solid #3a3a5a; 
     }
     .nav-link:hover {
         background-color: #24243e;
         border-bottom-color: #3a3a5a;
     }
-    /* Sửa lại CSS cho switcher trên mobile */
     .nav-menu .lang-switcher {
         flex-direction: row; 
-        justify-content: center;
+        justify-content: center; /* Giữ switcher ở giữa */
         padding: 10px;
         border-bottom: 1px solid #3a3a5a;
     }
