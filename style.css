@@ -61,7 +61,7 @@ section {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Giảm khoảng cách 1 chút */
     margin: 0;
     padding: 0;
 }
@@ -69,7 +69,7 @@ section {
 .nav-link {
     color: #e0e0e0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Thu nhỏ chữ 1 chút */
     font-weight: 700;
     padding: 5px 0;
     border-bottom: 2px solid transparent;
@@ -265,9 +265,26 @@ code {
     font-weight: 700;
 }
 
-/* 6. Gói Thuê */
+/* 6. PHẦN DÙNG THỬ (MỚI) */
+.free-trial-section {
+    background-color: #1a1a2e; /* Cùng màu nền */
+    border-top: 1px solid #3a3a5a;
+    border-bottom: 1px solid #3a3a5a;
+}
+.free-trial-section h2 {
+    color: #f0b90b; /* Màu vàng */
+    text-shadow: 0 0 8px rgba(240, 185, 11, 0.4);
+}
+.free-trial-section p {
+    font-size: 1.1rem;
+    color: #c0c0d0;
+    margin-bottom: 30px;
+}
+
+
+/* 7. Gói Thuê */
 .pricing-section {
-    background-color: #1a1a2e;
+    background-color: #161625;
 }
 .pricing-grid {
     display: grid;
@@ -334,10 +351,11 @@ code {
     color: #1a1a2e;
 }
 
-/* 7. Footer */
+/* 8. Footer */
 .footer-cta {
-    background-color: #161625;
+    background-color: #1a1a2e;
     padding: 60px 20px;
+    border-top: 1px solid #3a3a5a;
 }
 .footer-cta h2 {
     border: none;
@@ -348,7 +366,7 @@ code {
 }
 
 /* ===== SỬA LẠI: Responsive cho mobile (Thêm Hamburger) ===== */
-@media (max-width: 768px) {
+@media (max-width: 850px) { /* Tăng breakpoint để menu mobile xuất hiện sớm hơn */
     body {
         padding-top: 60px; /* Giữ padding cho menu cố định */
     }
@@ -375,6 +393,7 @@ code {
         gap: 0;
         padding: 0;
         border-bottom: 1px solid #3a3a5a;
+        box-shadow: 0 8px 10px rgba(0,0,0,0.3);
     }
 
     .nav-link {
