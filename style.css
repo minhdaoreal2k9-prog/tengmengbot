@@ -102,8 +102,6 @@ section {
 }
 
 
-/* (Giữ nguyên các phần CSS khác: Hero, Features, Steps, Commands, Pricing, Footer...) */
-
 /* 2. Hero Section */
 .hero-section {
     background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://images8.alphacoders.com/117/1176440.jpg') no-repeat center center/cover;
