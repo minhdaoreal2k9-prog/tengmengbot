@@ -18,7 +18,7 @@ h2 {
     font-size: 2.5rem;
     margin-top: 40px;
     margin-bottom: 40px;
-    border-bottom: 3px solid #f0b90b; /* Màu vàng ROK */
+    border-bottom: 3px solid #00D1FF; /* SỬA MÀU */
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -52,7 +52,7 @@ section {
 .nav-logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
     text-decoration: none;
 }
 .nav-menu {
@@ -72,8 +72,8 @@ section {
     transition: color 0.3s, border-color 0.3s;
 }
 .nav-link:hover {
-    color: #f0b90b;
-    border-bottom-color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
+    border-bottom-color: #00D1FF; /* SỬA MÀU */
 }
 .nav-toggle {
     display: none; 
@@ -87,13 +87,13 @@ section {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #f0b90b;
+    background-color: #00D1FF; /* SỬA MÀU */
     margin: 5px 0;
     transition: all 0.3s;
 }
 
 
-/* 2. Hero Section (THÊM NỀN CHUYỂN ĐỘNG) */
+/* 2. Hero Section (NỀN CHUYỂN ĐỘNG) */
 .hero-section {
     min-height: 80vh;
     display: flex;
@@ -101,14 +101,10 @@ section {
     align-items: center;
     text-align: center;
     padding: 40px 20px;
-    
-    /* Cho animation */
     position: relative; 
     overflow: hidden; 
-    background-color: #1a1a2e; /* Màu nền dự phòng */
+    background-color: #1a1a2e; 
 }
-
-/* Nền chuyển động (Ken Burns) */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -116,25 +112,22 @@ section {
     width: 110%; height: 110%;
     background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://images8.alphacoders.com/117/1176440.jpg') no-repeat center center/cover;
     animation: kenburns 30s infinite alternate;
-    z-index: 1; /* Lớp nền */
+    z-index: 1; 
 }
-
 @keyframes kenburns {
     100% {
         transform: scale(1.15) translateX(-3%);
     }
 }
-
 .hero-content {
-    position: relative; /* Đảm bảo nội dung nổi lên trên */
-    z-index: 2; /* Lớp nội dung */
+    position: relative; 
+    z-index: 2; 
 }
-
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #f0b90b; 
-    text-shadow: 0 0 10px rgba(240, 185, 11, 0.5), 0 0 20px rgba(240, 185, 11, 0.3);
+    color: #00D1FF; /* SỬA MÀU */
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5), 0 0 20px rgba(0, 209, 255, 0.3); /* SỬA MÀU SHADOW */
 }
 .hero-content p {
     font-size: 1.2rem;
@@ -159,22 +152,22 @@ section {
     border: 2px solid transparent;
 }
 .cta-button.primary {
-    background-color: #f0b90b;
+    background-color: #00D1FF; /* SỬA MÀU */
     color: #1a1a2e;
-    border-color: #f0b90b;
+    border-color: #00D1FF; /* SỬA MÀU */
 }
 .cta-button.primary:hover {
-    background-color: #ffe082;
-    border-color: #ffe082;
+    background-color: #33E0FF; /* SỬA MÀU (Hover) */
+    border-color: #33E0FF; /* SỬA MÀU (Hover) */
     transform: translateY(-3px);
 }
 .cta-button.secondary {
     background-color: transparent;
-    color: #f0b90b;
-    border-color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
+    border-color: #00D1FF; /* SỬA MÀU */
 }
 .cta-button.secondary:hover {
-    background-color: #f0b90b;
+    background-color: #00D1FF; /* SỬA MÀU */
     color: #1a1a2e;
     transform: translateY(-3px);
 }
@@ -195,14 +188,14 @@ section {
     background-color: #24243e;
     padding: 25px;
     border-radius: 8px;
-    border-left: 5px solid #f0b90b;
+    border-left: 5px solid #00D1FF; /* SỬA MÀU */
     transition: transform 0.3s;
 }
 .feature-category:hover {
     transform: translateY(-5px);
 }
 .feature-category h3 {
-    color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
     margin-top: 0;
     font-size: 1.4rem;
 }
@@ -232,8 +225,8 @@ section {
 .step-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #f0b90b;
-    border: 2px solid #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
+    border: 2px solid #00D1FF; /* SỬA MÀU */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -259,7 +252,7 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #f0b90b;
+    background-color: #00D1FF; /* SỬA MÀU */
     color: #1a1a2e;
     font-size: 1.1rem;
 }
@@ -272,7 +265,7 @@ code {
     border-radius: 4px;
     font-family: monospace;
     font-size: 1.1rem;
-    color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
 }
 
 /* 6. PHẦN DÙNG THỬ (MỚI) */
@@ -282,8 +275,8 @@ code {
     border-bottom: 1px solid #3a3a5a;
 }
 .free-trial-section h2 {
-    color: #f0b90b; 
-    text-shadow: 0 0 8px rgba(240, 185, 11, 0.4);
+    color: #00D1FF; /* SỬA MÀU */
+    text-shadow: 0 0 8px rgba(0, 209, 255, 0.4); /* SỬA MÀU SHADOW */
 }
 .free-trial-section p {
     font-size: 1.1rem;
@@ -321,9 +314,9 @@ code {
 .price-card .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #f0b90b;
+    color: #00D1FF; /* SỬA MÀU */
     margin: 10px 0;
-    text-shadow: 0 0 8px rgba(240, 185, 11, 0.4);
+    text-shadow: 0 0 8px rgba(0, 209, 255, 0.4); /* SỬA MÀU SHADOW */
 }
 .price-card .duration {
     font-size: 1rem;
@@ -335,21 +328,23 @@ code {
     color: #c0c0d0;
     margin-top: 15px;
 }
+
+/* SỬA MÀU HIỆU ỨNG PULSE */
 @keyframes pulse-glow {
     0% {
-        box-shadow: 0 0 10px rgba(240, 185, 11, 0.5);
+        box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
     }
     50% {
-        box-shadow: 0 0 25px rgba(240, 185, 11, 0.8);
+        box-shadow: 0 0 25px rgba(0, 209, 255, 0.8);
     }
     100% {
-        box-shadow: 0 0 10px rgba(240, 185, 11, 0.5);
+        box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
     }
 }
 .price-card.highlight {
-    background-color: #f0b90b;
+    background-color: #00D1FF; /* SỬA MÀU */
     color: #1a1a2e;
-    border-color: #f0b90b;
+    border-color: #00D1FF; /* SỬA MÀU */
     transform: scale(1.05);
     animation: pulse-glow 2s infinite;
 }
