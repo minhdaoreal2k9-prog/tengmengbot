@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TengMeng ROK Bot</title>
+    <title>TengMeng Bot - Dịch vụ Bot ROK</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -12,26 +12,71 @@
     <header class="hero-section">
         <div class="hero-content">
             <h1>TENGMENG BOT</h1>
-            <p>Giải pháp Auto ROK thông minh, an toàn và được điều khiển hoàn toàn qua Discord.</p>
+            <p>Giải pháp Auto ROK thông minh, an toàn, được điều khiển 100% qua Discord.</p>
             <a href="https://discord.gg/uzVS5nbz3t" class="cta-button">THAM GIA DISCORD NGAY</a>
         </div>
     </header>
 
-    <section class="features-section">
-        <h2>TÍNH NĂNG NỔI BẬT</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>🤖 ĐIỀU KHIỂN QUA CHAT</h3>
-                <p>Chỉ cần gõ <code>start</code>, <code>stop</code>, hoặc <code>show</code>. Bot sẽ tự động thực thi lệnh trên acc ROK đã gán cho bạn.</p>
+    <section class="features-detailed-section">
+        <h2>TÍNH NĂNG ĐẦY ĐỦ</h2>
+        <div class="features-detailed-grid">
+            
+            <div class="feature-category">
+                <h3>🪓 QUẢN LÝ TÀI NGUYÊN</h3>
+                <ul>
+                    <li>Thu thập tài nguyên (Farm)</li>
+                    <li>Thu thập đá quý (Gem)</li>
+                    <li>Sản xuất vật liệu</li>
+                    <li>Sản xuất pha lê</li>
+                    <li>Thu tài nguyên trong thành</li>
+                    <li>Dùng tăng tốc sản xuất tài nguyên</li>
+                </ul>
             </div>
-            <div class="feature-card">
-                <h3>🛡️ AN TOÀN & ĐỘC LẬP</h3>
-                <p>Mỗi người thuê được gán một <code>index</code> riêng. Lệnh <code>stop</code> sẽ đóng hoàn toàn (Taskkill) tab BlueStacks của bạn, đảm bảo không ai đụng vào acc của ai.</p>
+            
+            <div class="feature-category">
+                <h3>⚔️ CHIẾN ĐẤU & QUÂN SỰ</h3>
+                <ul>
+                    <li>Đánh man rợ (Barbarians)</li>
+                    <li>Đánh cướp bóc (Plunder)</li>
+                    <li>Mở rally đánh pháo đài</li>
+                    <li>Tham gia rally</li>
+                    <li>Huấn luyện lính</li>
+                    <li>Chữa lính (Bệnh viện)</li>
+                </ul>
             </div>
-            <div class="feature-card">
-                <h3>📸 XEM TRỰC TIẾP (SHOW)</h3>
-                <p>Gõ <code>show</code> và bot sẽ ngay lập tức chụp ảnh cửa sổ game của bạn (đã cắt bỏ viền) và gửi vào Discord, giúp bạn kiểm tra tình hình mọi lúc.</p>
+
+            <div class="feature-category">
+                <h3>🤝 HOẠT ĐỘNG LIÊN MINH</h3>
+                <ul>
+                    <li>Hỗ trợ liên minh (Help)</li>
+                    <li>Cống hiến liên minh (Donate)</li>
+                    <li>Nhận quà liên minh</li>
+                    <li>Nhận tài nguyên từ lãnh thổ liên minh</li>
+                </ul>
             </div>
+
+            <div class="feature-category">
+                <h3>☀️ NHIỆM VỤ HÀNG NGÀY</h3>
+                <ul>
+                    <li>Cửa hàng thương nhân bí ẩn</li>
+                    <li>Nhận quà đăng nhập</li>
+                    <li>Nhận quà VIP hằng ngày</li>
+                    <li>Nhận quà viễn chinh hằng ngày</li>
+                    <li>Nhận thưởng cuộn Lucerne</li>
+                    <li>Mở rương miễn phí tại Quán rượu</li>
+                    <li>Mở kho báu hang động</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h3>⚙️ TIỆN ÍCH HỖ TRỢ</h3>
+                <ul>
+                    <li>Tự động dùng khiên (Shield)</li>
+                    <li>Tự động đăng nhập lại</li>
+                    <li>Tự động chuyển tài khoản</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -46,7 +91,7 @@
             <div class="step">
                 <div class="step-number">2</div>
                 <h3>GÁN ACC (BIND)</h3>
-                <p>Owner sẽ dùng lệnh <code>/tenant bindindex</code> để gán tài khoản Discord của bạn vào <code>index</code> acc mà bạn thuê.</p>
+                <p>Owner sẽ dùng lệnh <code>/tenant bindindex</code> (lệnh ẩn) để gán tài khoản Discord của bạn vào <code>index</code> acc mà bạn thuê.</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
@@ -73,11 +118,6 @@
                     <td><span class="delay-yes">Có (60s)</span></td>
                 </tr>
                 <tr>
-                    <td><code>toggle</code></td>
-                    <td>Tương tự như <code>start</code>.</td>
-                    <td><span class="delay-yes">Có (60s)</span></td>
-                </tr>
-                <tr>
                     <td><code>stop</code></td>
                     <td><strong>Đóng hoàn toàn</strong> tab BlueStacks (Taskkill).</td>
                     <td><span class="delay-no">Không</span></td>
@@ -92,13 +132,20 @@
     </section>
 
     <section class="pricing-section">
-        <h2>GÓI DỊCH VỤ & GIA HẠN</h2>
-        <p>Chúng tôi cung cấp các gói thuê linh hoạt theo ngày.</p>
+        <h2>GIÁ THUÊ DỊCH VỤ</h2>
         <ul>
-            <li><strong>Gán mới:</strong> Khi Owner gán acc, bạn có thể chọn số ngày thuê (ví dụ: 30 ngày).</li>
-            <li><strong>Cộng dồn:</strong> Khi bạn chat <code>start</code>, bot sẽ nhắc nhở thời gian còn lại (nếu có).</li>
-            <li><strong>Gia hạn:</strong> Dùng lệnh <code>/tenant extend</code>, thời gian sẽ được <strong>cộng dồn</strong> vào hạn cũ, đảm bảo bạn không bị mất ngày nào.</li>
+            <li class="highlight">
+                <strong>ƯU ĐÃI KHAI TRƯƠNG:</strong> THÁNG ĐẦU THUÊ = 500K
+            </li>
+            <li>150K / TUẦN</li>
+            <li>550K / THÁNG (Rủ team 5 sẽ là 500K/Tháng)</li>
+            <li>1500K / 3 THÁNG</li>
+            <li>5500K / NĂM</li>
         </ul>
+        <p class="expiry-info">
+            Bot hỗ trợ cộng dồn thời gian. Dùng lệnh <code>/tenant extend</code> (Owner) để gia hạn mà không mất ngày nào.<br>
+            Người thuê sẽ thấy thời gian còn lại khi chat <code>start</code>.
+        </p>
     </section>
 
     <footer class="footer-cta">
