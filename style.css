@@ -16,7 +16,7 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-bottom: 3px solid #f0b90b; /* Màu vàng ROK */
     display: inline-block;
     padding-bottom: 10px;
@@ -29,8 +29,8 @@ section {
 
 /* 1. Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/8Qj8mJq.png') no-repeat center center/cover;
     /* Thay 'link-anh-nen-rok.jpg' bằng link ảnh nền game ROK của bạn */
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/8Qj8mJq.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -65,31 +65,45 @@ section {
     transform: translateY(-3px);
 }
 
-/* 2. Features Section */
-.features-section {
+/* 2. Features Section (Mới) */
+.features-detailed-section {
     background-color: #161625;
 }
 
-.features-grid {
+.features-detailed-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    /* Tạo 3 cột trên desktop, 1-2 cột trên mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto 0;
+    text-align: left;
 }
 
-.feature-card {
+.feature-category {
     background-color: #24243e;
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
     border-left: 5px solid #f0b90b;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
+.feature-category h3 {
     color: #f0b90b;
-    margin-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.4rem;
 }
+
+.feature-category ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style: square;
+}
+
+.feature-category li {
+    margin-bottom: 8px;
+    color: #c0c0d0;
+}
+
 
 /* 3. How It Works */
 .steps-container {
@@ -102,6 +116,7 @@ section {
 
 .step {
     flex-basis: 30%;
+    min-width: 300px;
     padding: 20px;
 }
 
@@ -128,6 +143,7 @@ table {
     margin: 40px auto 0;
     border-collapse: collapse;
     background-color: #24243e;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 th, td {
@@ -151,6 +167,7 @@ code {
     padding: 3px 6px;
     border-radius: 4px;
     font-family: monospace;
+    font-size: 1.1rem;
 }
 
 .delay-yes {
@@ -163,20 +180,42 @@ code {
     font-weight: 700;
 }
 
-/* 5. Gói Thuê */
+/* 5. Gói Thuê (Mới) */
 .pricing-section ul {
     list-style: none;
     padding: 0;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: left;
+    max-width: 700px; /* Tăng độ rộng */
+    margin: 40px auto 0;
+    text-align: center;
 }
 
 .pricing-section li {
     background-color: #24243e;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid #4a4a6a;
+}
+
+/* Style cho ưu đãi đặc biệt */
+.pricing-section li.highlight {
+    background-color: #f0b90b;
+    color: #1a1a2e;
+    border-color: #f0b90b;
+    font-size: 1.3rem;
+    box-shadow: 0 0 15px rgba(240, 185, 11, 0.5);
+}
+
+.pricing-section li.highlight strong {
+    color: #1a1a2e;
+}
+
+.expiry-info {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #aaa;
 }
 
 /* 6. Footer */
@@ -203,4 +242,20 @@ code {
 
 .footer-cta .cta-button:hover {
     background-color: #000000;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .step {
+        flex-basis: 80%;
+    }
+    table {
+        font-size: 0.9rem;
+    }
 }
