@@ -18,7 +18,7 @@ h2 {
     font-size: 2.5rem;
     margin-top: 40px;
     margin-bottom: 40px;
-    border-bottom: 3px solid #00D1FF; /* SỬA MÀU */
+    border-bottom: 3px solid #FF9900; /* SỬA MÀU CAM */
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -52,7 +52,7 @@ section {
 .nav-logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
     text-decoration: none;
 }
 .nav-menu {
@@ -61,7 +61,7 @@ section {
     gap: 20px; 
     margin: 0;
     padding: 0;
-    align-items: center; /* Căn giữa switcher */
+    align-items: center; 
 }
 .nav-link {
     color: #e0e0e0;
@@ -73,8 +73,8 @@ section {
     transition: color 0.3s, border-color 0.3s;
 }
 .nav-link:hover {
-    color: #00D1FF; /* SỬA MÀU */
-    border-bottom-color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
+    border-bottom-color: #FF9900; /* SỬA MÀU CAM */
 }
 .nav-toggle {
     display: none; 
@@ -88,12 +88,12 @@ section {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #00D1FF; /* SỬA MÀU */
+    background-color: #FF9900; /* SỬA MÀU CAM */
     margin: 5px 0;
     transition: all 0.3s;
 }
 
-/* CSS CHO LANGUAGE SWITCHER (MỚI) */
+/* CSS CHO LANGUAGE SWITCHER */
 .lang-switcher {
     display: flex;
     align-items: center;
@@ -110,13 +110,13 @@ section {
     border-bottom: none; 
 }
 .lang-switcher .nav-link:hover {
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
     border-bottom: none;
 }
 .lang-switcher .active-lang {
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
     font-weight: 700;
-    border: 1px solid #00D1FF; /* SỬA MÀU */
+    border: 1px solid #FF9900; /* SỬA MÀU CAM */
     border-radius: 4px;
 }
 
@@ -154,8 +154,8 @@ section {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #00D1FF; /* SỬA MÀU */
-    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5), 0 0 20px rgba(0, 209, 255, 0.3); /* SỬA MÀU SHADOW */
+    color: #FF9900; /* SỬA MÀU CAM */
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.5), 0 0 20px rgba(255, 153, 0, 0.3); /* SỬA MÀU SHADOW */
 }
 .hero-content p {
     font-size: 1.2rem;
@@ -180,22 +180,22 @@ section {
     border: 2px solid transparent;
 }
 .cta-button.primary {
-    background-color: #00D1FF; /* SỬA MÀU */
+    background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
-    border-color: #00D1FF; /* SỬA MÀU */
+    border-color: #FF9900; /* SỬA MÀU CAM */
 }
 .cta-button.primary:hover {
-    background-color: #33E0FF; /* SỬA MÀU (Hover) */
-    border-color: #33E0FF; /* SỬA MÀU (Hover) */
+    background-color: #ffad33; /* SỬA MÀU CAM (Hover) */
+    border-color: #ffad33; /* SỬA MÀU CAM (Hover) */
     transform: translateY(-3px);
 }
 .cta-button.secondary {
     background-color: transparent;
-    color: #00D1FF; /* SỬA MÀU */
-    border-color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
+    border-color: #FF9900; /* SỬA MÀU CAM */
 }
 .cta-button.secondary:hover {
-    background-color: #00D1FF; /* SỬA MÀU */
+    background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
     transform: translateY(-3px);
 }
@@ -216,14 +216,14 @@ section {
     background-color: #24243e;
     padding: 25px;
     border-radius: 8px;
-    border-left: 5px solid #00D1FF; /* SỬA MÀU */
+    border-left: 5px solid #FF9900; /* SỬA MÀU CAM */
     transition: transform 0.3s;
 }
 .feature-category:hover {
     transform: translateY(-5px);
 }
 .feature-category h3 {
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
     margin-top: 0;
     font-size: 1.4rem;
 }
@@ -253,8 +253,8 @@ section {
 .step-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #00D1FF; /* SỬA MÀU */
-    border: 2px solid #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
+    border: 2px solid #FF9900; /* SỬA MÀU CAM */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -280,7 +280,7 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #00D1FF; /* SỬA MÀU */
+    background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
     font-size: 1.1rem;
 }
@@ -293,7 +293,7 @@ code {
     border-radius: 4px;
     font-family: monospace;
     font-size: 1.1rem;
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
 }
 
 /* 6. PHẦN DÙNG THỬ */
@@ -303,8 +303,8 @@ code {
     border-bottom: 1px solid #3a3a5a;
 }
 .free-trial-section h2 {
-    color: #00D1FF; /* SỬA MÀU */
-    text-shadow: 0 0 8px rgba(0, 209, 255, 0.4); /* SỬA MÀU SHADOW */
+    color: #FF9900; /* SỬA MÀU CAM */
+    text-shadow: 0 0 8px rgba(255, 153, 0, 0.4); /* SỬA MÀU SHADOW */
 }
 .free-trial-section p {
     font-size: 1.1rem;
@@ -342,9 +342,9 @@ code {
 .price-card .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #00D1FF; /* SỬA MÀU */
+    color: #FF9900; /* SỬA MÀU CAM */
     margin: 10px 0;
-    text-shadow: 0 0 8px rgba(0, 209, 255, 0.4); /* SỬA MÀU SHADOW */
+    text-shadow: 0 0 8px rgba(255, 153, 0, 0.4); /* SỬA MÀU SHADOW */
 }
 .price-card .duration {
     font-size: 1rem;
@@ -360,19 +360,19 @@ code {
 /* SỬA MÀU HIỆU ỨNG PULSE */
 @keyframes pulse-glow {
     0% {
-        box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+        box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
     }
     50% {
-        box-shadow: 0 0 25px rgba(0, 209, 255, 0.8);
+        box-shadow: 0 0 25px rgba(255, 153, 0, 0.8);
     }
     100% {
-        box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+        box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
     }
 }
 .price-card.highlight {
-    background-color: #00D1FF; /* SỬA MÀU */
+    background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
-    border-color: #00D1FF; /* SỬA MÀU */
+    border-color: #FF9900; /* SỬA MÀU CAM */
     transform: scale(1.05);
     animation: pulse-glow 2s infinite;
 }
@@ -428,10 +428,7 @@ code {
         background-color: #161625;
         flex-direction: column; 
         width: 100%;
-        
-        /* === SỬA LỖI CĂN GIỮA === */
-        text-align: left; /* Đổi từ 'center' sang 'left' */
-        
+        text-align: left; 
         gap: 0;
         padding: 0;
         border-bottom: 1px solid #3a3a5a;
@@ -439,7 +436,7 @@ code {
     }
     .nav-link {
         display: block; 
-        padding: 15px 20px; /* Thêm padding trái 20px */
+        padding: 15px 20px; 
         border-bottom: 1px solid #3a3a5a; 
     }
     .nav-link:hover {
@@ -448,7 +445,7 @@ code {
     }
     .nav-menu .lang-switcher {
         flex-direction: row; 
-        justify-content: center; /* Giữ switcher ở giữa */
+        justify-content: center; 
         padding: 10px;
         border-bottom: 1px solid #3a3a5a;
     }
