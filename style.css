@@ -61,6 +61,7 @@ section {
     gap: 20px; 
     margin: 0;
     padding: 0;
+    align-items: center; /* Căn giữa switcher */
 }
 .nav-link {
     color: #e0e0e0;
@@ -90,6 +91,33 @@ section {
     background-color: #00D1FF; /* SỬA MÀU */
     margin: 5px 0;
     transition: all 0.3s;
+}
+
+/* CSS CHO LANGUAGE SWITCHER (MỚI) */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px; 
+}
+.lang-switcher span {
+    color: #4a4a6a; 
+    font-weight: 700;
+}
+.lang-switcher .nav-link {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    border-bottom: none; 
+}
+.lang-switcher .nav-link:hover {
+    color: #00D1FF; /* SỬA MÀU */
+    border-bottom: none;
+}
+.lang-switcher .active-lang {
+    color: #00D1FF; /* SỬA MÀU */
+    font-weight: 700;
+    border: 1px solid #00D1FF; /* SỬA MÀU */
+    border-radius: 4px;
 }
 
 
@@ -268,7 +296,7 @@ code {
     color: #00D1FF; /* SỬA MÀU */
 }
 
-/* 6. PHẦN DÙNG THỬ (MỚI) */
+/* 6. PHẦN DÙNG THỬ */
 .free-trial-section {
     background-color: #1a1a2e; 
     border-top: 1px solid #3a3a5a;
@@ -369,7 +397,7 @@ code {
     margin-bottom: 30px;
 }
 
-/* 9. (MỚI) HIỆU ỨNG FADE-IN KHI CUỘN */
+/* 9. HIỆU ỨNG FADE-IN KHI CUỘN */
 .animated-section {
     opacity: 0;
     transform: translateY(30px);
@@ -414,6 +442,17 @@ code {
     .nav-link:hover {
         background-color: #24243e;
         border-bottom-color: #3a3a5a;
+    }
+    /* Sửa lại CSS cho switcher trên mobile */
+    .nav-menu .lang-switcher {
+        flex-direction: row; 
+        justify-content: center;
+        padding: 10px;
+        border-bottom: 1px solid #3a3a5a;
+    }
+    .nav-menu .lang-switcher .nav-link {
+        border-bottom: none; 
+        padding: 5px 10px;
     }
     .nav-toggle-label {
         display: block;
