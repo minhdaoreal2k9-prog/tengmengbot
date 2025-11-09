@@ -1,285 +1,206 @@
-/* ======== THIẾT LẬP CHUNG ======== */
-:root {
-    --color-primary: #5865F2; /* Màu Blurple của Discord */
-    --color-secondary: #2C2F33; /* Màu xám tối */
-    --color-background: #1e1e2e; /* Màu nền chính (tối) */
-    --color-surface: #2a2a3a;   /* Màu nền cho các thẻ (card) */
-    --color-text: #F0F0F0;      /* Màu chữ chính (sáng) */
-    --color-text-muted: #99AAB5; /* Màu chữ phụ */
-    --color-green: #43b581;      /* Màu cho gói popular */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Cài đặt chung */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: #1a1a2e; /* Màu nền xanh đen tối */
+    color: #e0e0e0; /* Màu chữ trắng ngà */
+    margin: 0;
     line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ======== HEADER & NAV ======== */
-header {
-    background-color: var(--color-surface);
-    padding: 1rem 0;
-    border-bottom: 1px solid #444;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo a {
-    font-size: 1.5rem;
+h1, h2, h3 {
+    color: #ffffff;
     font-weight: 700;
-    color: var(--color-text);
 }
 
-header .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-header .nav-links a {
-    font-weight: 500;
-    color: var(--color-text-muted);
-    transition: color 0.3s ease;
-}
-
-header .nav-links a:hover {
-    color: var(--color-primary);
-}
-
-/* ======== NÚT BẤM (BUTTONS) ======== */
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: #FFF;
-}
-
-.btn-primary:hover {
-    background-color: #4752C4;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(88, 101, 242, 0.3);
-}
-
-.btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    border: 1px solid var(--color-text-muted);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-text-muted);
-    color: var(--color-secondary);
-}
-
-.nav-btn {
-    padding: 0.5rem 1rem; /* Nút trên nav nhỏ hơn */
-}
-
-/* ======== PHẦN GIỚI THIỆU CHÍNH (HERO) ======== */
-#hero {
-    padding: 6rem 0;
+h2 {
     text-align: center;
-    background: linear-gradient(rgba(30, 30, 46, 0.9), rgba(30, 30, 46, 0.9)), url('https://source.unsplash.com/random/1600x900/?abstract,code,technology') no-repeat center center/cover;
+    font-size: 2.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f0b90b; /* Màu vàng ROK */
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
-#hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-    color: #FFF;
+section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-#hero .subtitle {
-    font-size: 1.25rem;
-    color: var(--color-text-muted);
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-}
-
-.cta-buttons {
+/* 1. Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/8Qj8mJq.png') no-repeat center center/cover;
+    /* Thay 'link-anh-nen-rok.jpg' bằng link ảnh nền game ROK của bạn */
+    height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    text-align: center;
 }
 
-/* ======== CÁC PHẦN CHUNG ======== */
-section {
-    padding: 5rem 0;
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #f0b90b; /* Màu vàng ROK */
 }
 
-section h2 {
-    font-size: 2.5rem;
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: #f0b90b;
+    color: #1a1a2e;
+    padding: 15px 30px;
+    text-decoration: none;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-section .subtitle {
-    text-align: center;
+    border-radius: 5px;
     font-size: 1.1rem;
-    color: var(--color-text-muted);
-    margin-bottom: 3rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+.cta-button:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
 
-/* ======== TÍNH NĂNG (FEATURES) ======== */
+/* 2. Features Section */
+.features-section {
+    background-color: #161625;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature-card {
-    background-color: var(--color-surface);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #444;
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-primary);
+    background-color: #24243e;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #f0b90b;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
+    color: #f0b90b;
+    margin-bottom: 15px;
 }
 
-.feature-card p {
-    color: var(--color-text-muted);
+/* 3. How It Works */
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0;
 }
 
-/* ======== BẢNG GIÁ (PRICING) ======== */
-#pricing {
-    background-color: var(--color-surface);
+.step {
+    flex-basis: 30%;
+    padding: 20px;
 }
 
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px; /* Thu hẹp lại để 2 cột nhìn đẹp hơn */
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background-color: var(--color-background);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #444;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative; /* Dùng cho "popular-badge" */
-}
-
-.pricing-card .plan-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text);
-}
-
-.pricing-card .price {
+.step-number {
     font-size: 3rem;
-    font-weight: 900;
-    color: var(--color-primary);
-    margin: 1rem 0;
+    font-weight: 700;
+    color: #f0b90b;
+    border: 2px solid #f0b90b;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto 20px;
 }
 
-.pricing-card .currency {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
+/* 4. Bảng Lệnh */
+.commands-section {
+    background-color: #161625;
 }
 
-.pricing-card .plan-desc {
-    font-style: italic;
-    color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0;
+    border-collapse: collapse;
+    background-color: #24243e;
 }
 
-.pricing-card .plan-features {
+th, td {
+    border: 1px solid #4a4a6a;
+    padding: 15px;
     text-align: left;
-    margin-bottom: 2rem;
 }
 
-.pricing-card .plan-features li {
-    margin-bottom: 0.75rem;
-    color: var(--color-text-muted);
+th {
+    background-color: #f0b90b;
+    color: #1a1a2e;
+    font-size: 1.1rem;
 }
 
-/* Gói Popular (Nổi bật) */
-.pricing-card.popular {
-    border: 2px solid var(--color-green);
-    transform: scale(1.05);
+tbody tr:nth-child(even) {
+    background-color: #1f1f33;
 }
 
-.pricing-card .popular-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--color-green);
-    color: #FFF;
-    padding: 0.25rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+code {
+    background-color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.delay-yes {
+    color: #ff6b6b; /* Màu đỏ */
     font-weight: 700;
 }
 
-/* ======== FOOTER ======== */
-footer {
-    background-color: var(--color-secondary);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
+.delay-no {
+    color: #6bff6b; /* Màu xanh */
+    font-weight: 700;
+}
+
+/* 5. Gói Thuê */
+.pricing-section ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.pricing-section li {
+    background-color: #24243e;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* 6. Footer */
+.footer-cta {
+    background-color: #f0b90b;
+    padding: 60px 20px;
+}
+
+.footer-cta h2 {
+    color: #1a1a2e;
+    border: none;
+}
+
+.footer-cta p {
+    color: #1a1a2e;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.footer-cta .cta-button {
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+
+.footer-cta .cta-button:hover {
+    background-color: #000000;
 }
