@@ -79,16 +79,15 @@ section {
 
 /* 2. Hero Section */
 .hero-section {
-    /* Thay 'link-anh-nen-rok.jpg' bằng link ảnh nền game ROK của bạn */
-    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/8Qj8mJq.png') no-repeat center center/cover;
-    min-height: 80vh; /* Giảm chiều cao một chút */
+    /* ĐÃ CẬP NHẬT LINK ẢNH NỀN CỦA BẠN */
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://images8.alphacoders.com/117/1176440.jpg') no-repeat center center/cover;
+    min-height: 80vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 40px 20px;
 }
-
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -374,3 +373,4 @@ code {
         transform: scale(1); /* Tắt phóng to trên mobile */
     }
 }
+
