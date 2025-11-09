@@ -376,24 +376,51 @@ code {
     margin-bottom: 30px;
 }
 
-/* Responsive cho mobile */
+/* Responsive cho mobile (Đã sửa - Sẽ hiển thị menu) */
 @media (max-width: 768px) {
     body {
-        padding-top: 50px; /* Điều chỉnh cho navbar mobile */
-    }
-    .navbar {
-        height: 50px;
-        padding: 0 20px;
-    }
-    .nav-logo {
-        font-size: 1.4rem;
-    }
-    /* Ẩn menu desktop trên mobile */
-    .nav-menu {
-        display: none; 
-        /* Bạn sẽ cần thêm Javascript (hoặc 1 checkbox) để làm nút hamburger menu (nút 3 gạch) nếu muốn hiển thị menu trên mobile */
+        padding-top: 0; /* Xóa padding top vì menu sẽ không cố định */
     }
 
+    .navbar {
+        height: auto; /* Chiều cao tự động */
+        position: static; /* Bỏ cố định để menu cuộn theo trang */
+        padding: 0;
+    }
+
+    .navbar-container {
+        flex-direction: column; /* Xếp dọc (logo trên, menu dưới) */
+        align-items: center; /* Căn giữa */
+    }
+
+    .nav-logo {
+        font-size: 1.8rem;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center; /* Căn giữa logo */
+    }
+
+    .nav-menu {
+        display: flex; /* Hiện menu */
+        flex-direction: column; /* Xếp dọc các link */
+        width: 100%;
+        text-align: center;
+        gap: 0; /* Xóa gap ngang */
+        padding: 0;
+    }
+
+    .nav-link {
+        padding: 12px; /* Tăng vùng bấm */
+        border-bottom: 1px solid #3a3a5a; /* Thêm vạch ngăn cách */
+    }
+
+    .nav-link:hover {
+        background-color: #24243e; /* Đổi màu nền khi hover */
+        border-bottom-color: #3a3a5a;
+    }
+
+    /* Điều chỉnh các phần khác */
     h2 {
         font-size: 2rem;
     }
