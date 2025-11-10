@@ -1,4 +1,4 @@
-// script.js (Dùng để kích hoạt hiệu ứng cuộn)
+// script.js (Dùng để kích hoạt hiệu ứng cuộn, Tabs, và Nút về đầu trang)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -6,17 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Thêm class 'visible' để kích hoạt CSS transition
                 entry.target.classList.add('visible');
-                // Dừng theo dõi sau khi đã hiện
                 observer.unobserve(entry.target); 
             }
         });
     }, {
-        threshold: 0.1 // Kích hoạt khi 10% của mục lọt vào màn hình
+        threshold: 0.1 
     });
 
-    // Theo dõi tất cả các khu vực có class .animated-section
     const sections = document.querySelectorAll('.animated-section');
     sections.forEach((section) => {
         observer.observe(section);
@@ -26,10 +23,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.querySelector('.nav-menu');
     const navToggle = document.querySelector('#nav-toggle');
     navMenu.addEventListener('click', (e) => {
-        // Nếu bấm vào một link (<a>) thì tự động tắt checkbox (để đóng menu)
         if (e.target.tagName === 'A') {
             navToggle.checked = false;
         }
+    });
+
+    // 3. Logic cho Tabs Tính Năng (PHẦN QUAN TRỌNG KHIẾN NÚT HOẠT ĐỘNG)
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.feature-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const tabId = link.getAttribute('data-tab');
+
+            tabLinks.forEach(item => item.classList.remove('active'));
+            tabContents.forEach(item => item.classList.remove('active'));
+
+            link.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // 4. Logic cho Nút Về đầu trang (Scroll-to-Top)
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    window.addEventListener('scroll', () => {
+        // Hiện nút khi cuộn xuống 300px
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Xử lý cuộn mượt khi bấm
+    scrollToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
 });
