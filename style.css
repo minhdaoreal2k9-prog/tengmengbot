@@ -28,9 +28,11 @@ section {
     text-align: center;
 }
 
-/* 1. THANH MENU (Hamburger) */
+/* 1. THANH MENU (HIỆU ỨNG KÍNH MỜ - GLASSMORPHISM) */
 .navbar {
-    background-color: #161625; 
+    background-color: rgba(22, 22, 37, 0.7); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     border-bottom: 1px solid #3a3a5a;
     padding: 0 40px; 
     height: 60px; 
@@ -39,7 +41,6 @@ section {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 .navbar-container {
     display: flex;
@@ -121,49 +122,40 @@ section {
 }
 
 
-/* 2. Hero Section (NỀN CHUYỂN ĐỘNG) */
+/* 2. Hero Section (ĐÃ SỬA DÙNG ẢNH NỀN MỚI) */
 .hero-section {
     min-height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Đẩy nội dung xuống dưới */
     text-align: center;
     padding: 40px 20px;
     position: relative; 
     overflow: hidden; 
-    background-color: #1a1a2e; 
+    background-color: #1a1a2e;
+    
+    /* THAY THẾ VIDEO BẰNG ẢNH NỀN MỚI */
+    background-image: url('hero-bg.jpg'); /* Gọi file đã upload */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.hero-section::before {
-    content: "";
+/* (Xóa .hero-video-background) */
+
+.hero-overlay {
     position: absolute;
-    top: -5%; left: -5%;
-    width: 110%; height: 110%;
-    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://images8.alphacoders.com/117/1176440.jpg') no-repeat center center/cover;
-    animation: kenburns 30s infinite alternate;
-    z-index: 1; 
-}
-@keyframes kenburns {
-    100% {
-        transform: scale(1.15) translateX(-3%);
-    }
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Giảm độ mờ để thấy rõ ảnh thương hiệu */
+    background-color: rgba(26, 26, 46, 0.4); 
+    z-index: 2;
 }
 .hero-content {
     position: relative; 
-    z-index: 2; 
+    z-index: 3; 
+    margin-top: 25vh; /* Đẩy 2 nút bấm xuống dưới ảnh */
 }
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #FF9900; /* SỬA MÀU CAM */
-    text-shadow: 0 0 10px rgba(255, 153, 0, 0.5), 0 0 20px rgba(255, 153, 0, 0.3); /* SỬA MÀU SHADOW */
-}
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* (Đã xóa H1 và P) */
+
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -178,11 +170,17 @@ section {
     font-size: 1.1rem;
     transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
     border: 2px solid transparent;
+    
+    /* Thêm hiệu ứng Kính mờ cho nút */
+    background-color: rgba(22, 22, 37, 0.5); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 .cta-button.primary {
     background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
     border-color: #FF9900; /* SỬA MÀU CAM */
+    backdrop-filter: none;
 }
 .cta-button.primary:hover {
     background-color: #ffad33; /* SỬA MÀU CAM (Hover) */
@@ -198,44 +196,94 @@ section {
     background-color: #FF9900; /* SỬA MÀU CAM */
     color: #1a1a2e;
     transform: translateY(-3px);
+    backdrop-filter: none;
 }
 
-/* 3. Features Section */
+/* 3. Features Section (DẠNG TABS) */
 .features-detailed-section {
     background-color: #161625;
 }
-.features-detailed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
-    max-width: 1300px; 
-    margin: 40px auto 0;
+.feature-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.tab-link {
+    background-color: rgba(36, 36, 62, 0.7); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid #3a3a5a;
+    color: #e0e0e0;
+    padding: 12px 25px;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+.tab-link:hover {
+    background-color: #3a3a5a;
+    border-color: #5a5a7a;
+}
+.tab-link.active {
+    background-color: #FF9900; /* SỬA MÀU CAM */
+    color: #1a1a2e;
+    border-color: #FF9900; /* SỬA MÀU CAM */
+    backdrop-filter: none; 
+}
+.tab-link svg {
+    width: 20px;
+    height: 20px;
+}
+.feature-content-area {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: left;
-}
-.feature-category {
     background-color: #24243e;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 5px solid #FF9900; /* SỬA MÀU CAM */
-    transition: transform 0.3s;
+    padding: 30px;
+    border-radius: 10px;
 }
-.feature-category:hover {
-    transform: translateY(-5px);
+.feature-content {
+    display: none; 
+    animation: fadeIn 0.5s; 
 }
-.feature-category h3 {
+.feature-content.active {
+    display: block; 
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.feature-content h3 {
     color: #FF9900; /* SỬA MÀU CAM */
     margin-top: 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
-.feature-category ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style: square;
+.feature-content ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia 2 cột */
+    gap: 10px;
 }
-.feature-category li {
-    margin-bottom: 8px;
+.feature-content li {
+    position: relative;
+    padding-left: 30px;
     color: #c0c0d0;
 }
+.feature-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FF9900; /* SỬA MÀU CAM */
+    font-weight: 700;
+}
+
 
 /* 4. How It Works */
 .steps-container {
@@ -324,7 +372,9 @@ code {
     margin: 40px auto 0;
 }
 .price-card {
-    background-color: #24243e;
+    background-color: rgba(36, 36, 62, 0.7); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     padding: 30px;
     border-radius: 10px;
     border: 1px solid #4a4a6a;
@@ -375,6 +425,7 @@ code {
     border-color: #FF9900; /* SỬA MÀU CAM */
     transform: scale(1.05);
     animation: pulse-glow 2s infinite;
+    backdrop-filter: none; 
 }
 .price-card.highlight h3,
 .price-card.highlight .price,
@@ -408,13 +459,47 @@ code {
     transform: translateY(0);
 }
 
-/* 10. Responsive cho mobile (Hamburger) */
+/* 10. NÚT VỀ ĐẦU TRANG (MỚI) */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF9900; /* SỬA MÀU CAM */
+    color: #1a1a2e;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px; 
+    text-decoration: none;
+    z-index: 999;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+    transform: translateY(10px);
+}
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle; 
+}
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* 11. Responsive cho mobile (Hamburger) */
 @media (max-width: 850px) { 
     body {
         padding-top: 60px; 
     }
     .navbar {
         padding: 0 20px; 
+        background-color: rgba(22, 22, 37, 0.8); 
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
     .nav-logo {
         font-size: 1.5rem; 
@@ -472,9 +557,14 @@ code {
     h2 {
         font-size: 2rem;
     }
-    .hero-content h1 {
-        font-size: 3rem;
+    /* Sửa lại Hero cho ảnh mới */
+    .hero-content {
+        margin-top: 30vh; /* Đẩy nút xuống thấp hơn trên mobile */
     }
+    .hero-content h1 {
+        font-size: 3rem; /* (Giữ lại phòng trường hợp bạn muốn thêm H1) */
+    }
+
     .step {
         flex-basis: 80%;
     }
@@ -483,5 +573,17 @@ code {
     }
     .price-card.highlight {
         transform: scale(1); 
+    }
+    
+    /* Sửa lại Tab-Features cho mobile */
+    .feature-tabs {
+        gap: 10px;
+    }
+    .tab-link {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    .feature-content ul {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
     }
 }
