@@ -564,3 +564,75 @@ code {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* =========================
+   CSS CHO MỤC HƯỚNG DẪN
+   ========================= */
+
+/* Thêm ID này vào thẻ <section> của bạn */
+#how-to-use {
+    padding-top: 80px; /* Thêm khoảng cách cho thanh nav */
+    background-color: #f9f9f9; /* Nền hơi xám để tách biệt */
+}
+
+/* Tiêu đề chung của mục */
+#how-to-use .section-title,
+#how-to-use .section-subtitle {
+    text-align: center;
+}
+
+#how-to-use .section-subtitle {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* CSS cho từng bước */
+.step {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.step h3 {
+    margin-top: 0;
+    color: #3498db; /* Màu xanh cho tiêu đề Bước */
+    font-size: 1.5rem;
+}
+
+.step img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+/* CSS cho khối lệnh code */
+.step code {
+    background-color: #eee;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+/* CSS cho phần cài đặt bot */
+.bot-settings-highlight {
+    background-color: #fffbe6; /* Màu vàng nhạt */
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #ffeb3b; /* Viền vàng đậm */
+    margin: 20px 0;
+}
+
+#how-to-use ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#how-to-use ul li {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
