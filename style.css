@@ -565,19 +565,20 @@ code {
     }
 }
 /* =========================
-   CSS CHO MỤC HƯỚNG DẪN
-   ========================= */
+/* ==================================
+   (SỬA LỖI) CSS CHO MỤC HƯỚNG DẪN (Theme Tối)
+   ================================== */
 
-/* Thêm ID này vào thẻ <section> của bạn */
 #how-to-use {
-    padding-top: 80px; /* Thêm khoảng cách cho thanh nav */
-    background-color: #f9f9f9; /* Nền hơi xám để tách biệt */
+    padding-top: 80px; 
+    background-color: #161625; /* SỬA: Màu nền tối giống các section khác */
 }
 
-/* Tiêu đề chung của mục */
-#how-to-use .section-title,
+/* SỬA: Thêm màu chữ sáng cho văn bản */
+#how-to-use p,
 #how-to-use .section-subtitle {
     text-align: center;
+    color: #c0c0d0; /* SỬA: Thêm màu chữ sáng */
 }
 
 #how-to-use .section-subtitle {
@@ -587,52 +588,58 @@ code {
 
 /* CSS cho từng bước */
 .step {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: #24243e; /* SỬA: Nền tối cho card (giống bảng lệnh) */
+    border: 1px solid #4a4a6a; /* SỬA: Viền tối */
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    /* Giữ nguyên text-align: left từ file gốc của bạn */
+    text-align: left;
 }
 
 .step h3 {
     margin-top: 0;
-    color: #3498db; /* Màu xanh cho tiêu đề Bước */
+    color: #FF9900; /* SỬA: Màu cam chủ đạo */
     font-size: 1.5rem;
+    text-align: center; /* Cho tiêu đề Bước ra giữa */
 }
 
 .step img {
     max-width: 100%;
     border-radius: 5px;
     margin-top: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #4a4a6a; /* SỬA: Viền tối cho ảnh */
+    display: block; /* Thêm để ảnh tự căn giữa */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* CSS cho khối lệnh code */
-.step code {
-    background-color: #eee;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
+/* XÓA BỎ ".step code"
+Bạn hãy tìm và xóa quy tắc .step code (nếu có)
+để trang web dùng style "code" (màu cam) chung của bạn.
+*/
 
 /* CSS cho phần cài đặt bot */
 .bot-settings-highlight {
-    background-color: #fffbe6; /* Màu vàng nhạt */
+    background-color: rgba(255, 153, 0, 0.1); /* SỬA: Nền vàng/cam trong suốt */
     padding: 15px;
     border-radius: 5px;
-    border-left: 5px solid #ffeb3b; /* Viền vàng đậm */
+    border-left: 5px solid #FF9900; /* SỬA: Viền cam */
     margin: 20px 0;
+    color: #e0e0e0; /* SỬA: Thêm màu chữ sáng */
+    text-align: left;
 }
 
 #how-to-use ul {
     list-style-type: none;
     padding-left: 0;
+    text-align: left;
 }
 
 #how-to-use ul li {
     font-size: 1.05rem;
     margin-bottom: 12px;
     line-height: 1.6;
+    color: #c0c0d0; /* SỬA: Thêm màu chữ sáng */
 }
