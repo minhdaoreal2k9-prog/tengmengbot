@@ -7,12 +7,10 @@ body {
     line-height: 1.6;
     padding-top: 60px; 
 }
-
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
 }
-
 h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -22,13 +20,12 @@ h2 {
     display: inline-block;
     padding-bottom: 10px;
 }
-
 section {
     padding: 60px 20px;
     text-align: center;
 }
 
-/* 1. THANH MENU (HIỆU ỨNG KÍNH MỜ - GLASSMORPHISM) */
+/* 1. THANH MENU (HIỆU ỨNG KÍNH MỜ) */
 .navbar {
     background-color: rgba(22, 22, 37, 0.7); 
     backdrop-filter: blur(10px); 
@@ -93,8 +90,6 @@ section {
     margin: 5px 0;
     transition: all 0.3s;
 }
-
-/* CSS CHO LANGUAGE SWITCHER */
 .lang-switcher {
     display: flex;
     align-items: center;
@@ -121,41 +116,33 @@ section {
     border-radius: 4px;
 }
 
-
-/* 2. Hero Section (ĐÃ SỬA DÙNG ẢNH NỀN MỚI) */
+/* 2. Hero Section */
 .hero-section {
     min-height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* Đẩy nội dung xuống dưới */
+    align-items: center; 
     text-align: center;
     padding: 40px 20px;
     position: relative; 
     overflow: hidden; 
     background-color: #1a1a2e;
-    
-    /* THAY THẾ VIDEO BẰNG ẢNH NỀN MỚI */
-    background-image: url('hero-bg.jpg'); /* Gọi file đã upload */
+    background-image: url('hero-bg.jpg'); 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* (Xóa .hero-video-background) */
-
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Giảm độ mờ để thấy rõ ảnh thương hiệu */
     background-color: rgba(26, 26, 46, 0.4); 
     z-index: 2;
 }
 .hero-content {
     position: relative; 
     z-index: 3; 
-    margin-top: 25vh; /* Đẩy 2 nút bấm xuống dưới ảnh */
+    margin-top: 25vh; 
 }
-/* (Đã xóa H1 và P) */
-
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -170,8 +157,6 @@ section {
     font-size: 1.1rem;
     transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
     border: 2px solid transparent;
-    
-    /* Thêm hiệu ứng Kính mờ cho nút */
     background-color: rgba(22, 22, 37, 0.5); 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -198,6 +183,21 @@ section {
     transform: translateY(-3px);
     backdrop-filter: none;
 }
+
+/* (MỚI) Đoạn văn mô tả Hero */
+.hero-description {
+    max-width: 700px;
+    margin: 30px auto 0 auto;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+    background-color: rgba(22, 22, 37, 0.7); /* Nền kính mờ */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 
 /* 3. Features Section (DẠNG TABS) */
 .features-detailed-section {
@@ -360,13 +360,14 @@ code {
     margin-bottom: 30px;
 }
 
-/* 7. Gói Thuê */
+/* 7. Gói Thuê (SỬA LẠI THÀNH 4 CỘT) */
 .pricing-section {
     background-color: #161625;
 }
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Sửa: 4 cột trên desktop */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     max-width: 1200px;
     margin: 40px auto 0;
@@ -407,32 +408,7 @@ code {
     margin-top: 15px;
 }
 
-/* SỬA MÀU HIỆU ỨNG PULSE */
-@keyframes pulse-glow {
-    0% {
-        box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 153, 0, 0.8);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
-    }
-}
-.price-card.highlight {
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    border-color: #FF9900; /* SỬA MÀU CAM */
-    transform: scale(1.05);
-    animation: pulse-glow 2s infinite;
-    backdrop-filter: none; 
-}
-.price-card.highlight h3,
-.price-card.highlight .price,
-.price-card.highlight .duration,
-.price-card.highlight p {
-    color: #1a1a2e;
-}
+/* (Xóa CSS .price-card.highlight và @keyframes pulse-glow) */
 
 /* 8. Footer */
 .footer-cta {
@@ -459,7 +435,7 @@ code {
     transform: translateY(0);
 }
 
-/* 10. NÚT VỀ ĐẦU TRANG (MỚI) */
+/* 10. NÚT VỀ ĐẦU TRANG */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -557,22 +533,18 @@ code {
     h2 {
         font-size: 2rem;
     }
-    /* Sửa lại Hero cho ảnh mới */
-    .hero-content {
-        margin-top: 30vh; /* Đẩy nút xuống thấp hơn trên mobile */
-    }
     .hero-content h1 {
-        font-size: 3rem; /* (Giữ lại phòng trường hợp bạn muốn thêm H1) */
+        font-size: 3rem;
     }
-
+    .hero-description {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
     .step {
         flex-basis: 80%;
     }
     table {
         font-size: 0.9rem;
-    }
-    .price-card.highlight {
-        transform: scale(1); 
     }
     
     /* Sửa lại Tab-Features cho mobile */
@@ -585,5 +557,10 @@ code {
     }
     .feature-content ul {
         grid-template-columns: 1fr; /* 1 cột trên mobile */
+    }
+    
+    /* Sửa Bảng giá cho mobile (2 cột) */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
