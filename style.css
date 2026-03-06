@@ -1,33 +1,360 @@
-/* =========================================
-   GALLERY SHOWCASE (HÌNH ẢNH THỰC TẾ)
-   ========================================= */
-.gallery-grid {
+:root {
+    --bg-main: #0b0f19;
+    --bg-card: #151b2b;
+    --bg-card-hover: #1e2638;
+    --primary: #f5a623; /* Màu vàng cam đặc trưng ROK */
+    --primary-hover: #e09612;
+    --text-light: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: #2d3748;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+header {
+    background-color: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.social-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-sm {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-zalo { background-color: #0068ff; color: white; }
+.btn-discord { background-color: #5865F2; color: white; }
+
+/* HERO SECTION */
+.hero {
+    margin-top: 70px;
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(11, 15, 25, 0.8), var(--bg-main)), url('https://images8.alphacoders.com/117/1176440.jpg') center/cover;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero h1 span { color: var(--primary); }
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: #000;
+}
+
+/* SECTION TITLES */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* SERVICES (BẢNG GIÁ) */
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(245, 166, 35, 0.15);
+}
+
+.service-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.service-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.service-price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.service-features {
+    list-style: none;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.service-features li {
+    padding: 8px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-features li i { color: var(--primary); }
+
+.btn-block {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(245, 166, 35, 0.1);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.service-card:hover .btn-block {
+    background-color: var(--primary);
+    color: #000;
+}
+
+/* USER GUIDE (HƯỚNG DẪN) */
+.guide-container {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.guide-section { margin-bottom: 40px; }
+.guide-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cmd-box {
+    background-color: rgba(0,0,0,0.4);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 15px;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.cmd-box span { color: var(--text-muted); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; margin-left: 10px; }
+.cmd-box strong { color: #fff; }
+
+.step-list {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+}
+
+.step-list li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.step-list li::before {
+    counter-increment: my-awesome-counter;
+    content: counter(my-awesome-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background-color: var(--primary);
+    color: #000;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* FEATURE LIST LƯỚI */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 30px;
 }
 
-.gallery-img {
-    width: 100%;
-    height: 450px; /* Chiều cao cố định để các ảnh bằng nhau, hợp với ảnh dọc đt */
-    object-fit: cover; /* Cắt ảnh lấp đầy khung mà không bị méo */
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
+.feature-item {
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: border-color 0.3s;
 }
 
-.gallery-img:hover {
-    transform: scale(1.05) translateY(-5px); /* Phóng to và nảy nhẹ lên */
-    box-shadow: 0 15px 30px rgba(255, 153, 0, 0.4); /* Hiệu ứng tỏa sáng Neon màu cam */
-    border-color: var(--primary); /* Viền sáng màu cam */
-    z-index: 10; /* Đưa ảnh nổi lên trên cùng */
+.feature-item:hover { border-color: var(--primary); }
+.feature-item i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+.feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
+.feature-item p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* FOOTER & CTA */
+.cta-section {
+    background-color: var(--bg-card);
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Tinh chỉnh cho điện thoại */
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+.cta-section p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .gallery-img {
-        height: 350px; /* Rút gọn chiều cao trên đt để dễ cuộn */
-    }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2rem; }
+    .hero-btns { flex-direction: column; }
 }
