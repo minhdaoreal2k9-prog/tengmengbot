@@ -10,22 +10,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS chia cột cho danh sách lệnh dài */
+        .cmd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .cmd-grid .cmd-box {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .cmd-grid .cmd-box strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .cmd-grid .cmd-box span {
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="navbar">
             <a href="#" class="logo"><i class="fa-solid fa-robot"></i> TENGMENG BOT</a>
-<div class="nav-links">
-    <a href="#services">DỊCH VỤ</a>
-    <a href="#guide">HƯỚNG DẪN</a>
-    <a href="#features">TÍNH NĂNG</a>
-    <div class="lang-switch">
-        <a href="index.html" class="active">VI</a>
-        <span style="color: var(--text-muted)">|</span>
-        <a href="en.html">EN</a>
-    </div>
-</div>
+            <div class="nav-links">
+                <a href="#services">DỊCH VỤ</a>
+                <a href="#guide">HƯỚNG DẪN</a>
+                <a href="#features">TÍNH NĂNG</a>
+                <div class="lang-switch">
+                    <a href="index.html" class="active">VI</a>
+                    <span style="color: var(--text-muted)">|</span>
+                    <a href="en.html">EN</a>
+                </div>
+            </div>
             <div class="social-btns">
                 <a href="https://zalo.me/g/oehnep941" target="_blank" class="btn-sm btn-zalo">ZALO</a>
                 <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-sm btn-discord">DISCORD</a>
@@ -65,7 +87,7 @@
                 <h3 class="service-title">GÓI THÁNG</h3>
                 <div class="service-price">450k <span>/ tháng</span></div>
                 <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Bao gồm mọi tính năng cơ bản</li>
+                    <li><i class="fa-solid fa-check"></i> Trọn bộ Gói Trải Nghiệm</li>
                     <li><i class="fa-solid fa-check"></i> Farm Gems giới hạn an toàn</li>
                     <li><i class="fa-solid fa-check"></i> Tự động Rally Pháo đài</li>
                     <li><i class="fa-solid fa-check"></i> Tự động Join Rally</li>
@@ -76,25 +98,25 @@
 
             <div class="service-card">
                 <h3 class="service-title">GÓI QUÝ (TIẾT KIỆM)</h3>
-                <div class="service-price">1.300k <span>/ 3 tháng</span></div>
+                <div class="service-price">1.250k <span>/ 3 tháng</span></div>
                 <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Bao gồm mọi tính năng VIP</li>
+                    <li><i class="fa-solid fa-check"></i> Trọn bộ quyền lợi Gói Tháng</li>
                     <li><i class="fa-solid fa-check"></i> Tự động Huấn luyện lính</li>
                     <li><i class="fa-solid fa-check"></i> Mua đồ Thương nhân bí ẩn</li>
                     <li><i class="fa-solid fa-check"></i> Nhận quà Đăng nhập & VIP</li>
-                    <li><i class="fa-solid fa-check"></i> Tiết kiệm hơn 50k/tháng</li>
+                    <li><i class="fa-solid fa-check"></i> Tiết kiệm chi phí dài hạn</li>
                 </ul>
                 <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
             </div>
 
             <div class="service-card">
                 <h3 class="service-title">GÓI NĂM (ĐAM MÊ)</h3>
-                <div class="service-price">5.000k <span>/ năm</span></div>
+                <div class="service-price">4.899k <span>/ năm</span></div>
                 <ul class="service-features">
                     <li><i class="fa-solid fa-check"></i> Toàn quyền sử dụng Auto bot</li>
-                    <li><i class="fa-solid fa-check"></i> Ưu tiên cập nhật tính năng mới</li>
+                    <li><i class="fa-solid fa-check"></i> Ưu tiên cập nhật bản mới</li>
                     <li><i class="fa-solid fa-check"></i> Chống kẹt, chống check siêu việt</li>
-                    <li><i class="fa-solid fa-check"></i> Nhận tối đa ưu đãi từ hệ thống</li>
+                    <li><i class="fa-solid fa-check"></i> Nhận tối đa ưu đãi hệ thống</li>
                     <li><i class="fa-solid fa-check"></i> Tối ưu nhất cho tay to cày cuốc</li>
                 </ul>
                 <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
@@ -109,25 +131,47 @@
 
         <div class="guide-container">
             <div class="guide-section">
-                <h3><i class="fa-solid fa-terminal"></i> Lệnh Cơ Bản Discord</h3>
-                <div class="cmd-box">
-                    <strong>start</strong> <span>→ Khởi động bot bắt đầu chu trình chạy.</span>
-                </div>
-                <div class="cmd-box">
-                    <strong>stop</strong> <span>→ Tạm dừng bot an toàn.</span>
-                </div>
-                <div class="cmd-box">
-                    <strong>show</strong> <span>→ Bot chụp và gửi ảnh màn hình game thực tế của bạn.</span>
+                <h3><i class="fa-solid fa-terminal"></i> Bảng Lệnh Điều Khiển Bot</h3>
+                <div class="cmd-grid">
+                    <div class="cmd-box">
+                        <strong>Start</strong> <span>Bật bot bắt đầu chạy chu trình.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Stop</strong> <span>Đóng / tạm dừng bot an toàn.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Check</strong> <span>Kiểm tra trạng thái các tính năng và acc.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Gem</strong> <span>Bật/tắt farm gem (mặc định 5 đạo).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Bar</strong> <span>Bật/tắt đánh man rợ (mặc định 3 đạo).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Fort</strong> <span>Bật/tắt tham gia rally pháo đài (mặc định 1 đạo).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Rally</strong> <span>Bật/tắt tự động tập hợp rally.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Collect</strong> <span>Bật/tắt farm rss (mặc định 5 đạo).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Heal</strong> <span>Bật/tắt chữa thương lính (có thể chỉnh số lượng).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Mar</strong> <span>Bật/tắt đánh quân cướp bóc (mặc định 3 đạo).</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="guide-section">
+            <div class="guide-section" style="margin-top: 40px;">
                 <h3><i class="fa-solid fa-list-check"></i> Các Bước Cài Đặt Ban Đầu</h3>
                 <ul class="step-list">
                     <li><strong>Thanh toán và Gửi thông tin:</strong> Tham gia Discord/Zalo liên hệ Owner. Cung cấp Email (liên kết game) và Mã xác nhận cho Admin.</li>
                     <li><strong>Admin Gán Quyền:</strong> Sau khi nhận thông tin, Admin sẽ set quyền vào hệ thống. Bạn sẽ nhận được tin nhắn xác nhận từ Bot trên Discord.</li>
                     <li><strong>Điều khiển Bot:</strong> Mở kênh chat riêng với Bot, gõ <code>start</code> để chạy. Dùng <code>show</code> để theo dõi và <code>stop</code> nếu cần chuyển acc.</li>
-                    <li><strong>Thiết lập Cài đặt (Theo yêu cầu):</strong> Bot đã tự động Help, Farm, Nhận quà. Bạn có thể yêu cầu Admin chỉnh sửa: Đánh man rợ (đạo quân/AP), Giới hạn Gem, Bậc lính luyện (T1-T4).</li>
                 </ul>
             </div>
         </div>
@@ -197,4 +241,3 @@
 
 </body>
 </html>
-
