@@ -358,3 +358,21 @@ footer {
     .hero h1 { font-size: 2rem; }
     .hero-btns { flex-direction: column; }
 }
+/* NÚT CHUYỂN ĐỔI NGÔN NGỮ (LANG SWITCH) */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+.lang-switch a {
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+.lang-switch a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+.lang-switch a:hover {
+    color: var(--primary);
+}
