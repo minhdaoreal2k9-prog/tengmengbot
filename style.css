@@ -28,6 +28,19 @@ a {
     color: inherit;
 }
 
+/* HIỆU ỨNG NHỊP ĐẬP SÁNG CHÓA (PULSE GLOW) CHO NÚT BẤM */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(245, 166, 35, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+    }
+}
+
 /* NAVBAR */
 header {
     background-color: rgba(11, 15, 25, 0.95);
@@ -37,6 +50,7 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .navbar {
@@ -55,6 +69,11 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-shadow: 0 0 10px rgba(245, 166, 35, 0.5); /* Chữ logo phát sáng */
+}
+
+.logo i {
+    filter: drop-shadow(0 0 5px var(--primary));
 }
 
 .nav-links {
@@ -66,11 +85,12 @@ header {
 .nav-links a {
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--primary);
+    text-shadow: 0 0 8px rgba(245, 166, 35, 0.6); /* Hover sáng chữ menu */
 }
 
 .social-btns {
@@ -86,15 +106,39 @@ header {
     transition: all 0.3s;
 }
 
-.btn-zalo { background-color: #0068ff; color: white; }
-.btn-discord { background-color: #5865F2; color: white; }
+.btn-zalo { background-color: #0068ff; color: white; box-shadow: 0 0 10px rgba(0, 104, 255, 0.4); }
+.btn-zalo:hover { box-shadow: 0 0 15px rgba(0, 104, 255, 0.8); transform: translateY(-2px); }
+
+.btn-discord { background-color: #5865F2; color: white; box-shadow: 0 0 10px rgba(88, 101, 242, 0.4); }
+.btn-discord:hover { box-shadow: 0 0 15px rgba(88, 101, 242, 0.8); transform: translateY(-2px); }
+
+/* NÚT CHUYỂN ĐỔI NGÔN NGỮ */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+.lang-switch a {
+    color: var(--text-muted);
+    transition: all 0.3s;
+}
+.lang-switch a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    text-shadow: 0 0 8px rgba(245, 166, 35, 0.5);
+}
+.lang-switch a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(245, 166, 35, 0.5);
+}
 
 /* HERO SECTION */
 .hero {
     margin-top: 70px;
     padding: 100px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(11, 15, 25, 0.8), var(--bg-main)), url('https://images8.alphacoders.com/117/1176440.jpg') center/cover;
+    background: linear-gradient(to bottom, rgba(11, 15, 25, 0.85), var(--bg-main)), url('https://images8.alphacoders.com/117/1176440.jpg') center/cover;
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -110,11 +154,14 @@ header {
     letter-spacing: 2px;
 }
 
-.hero h1 span { color: var(--primary); }
+.hero h1 span { 
+    color: var(--primary); 
+    text-shadow: 0 0 15px rgba(245, 166, 35, 0.8), 0 0 30px rgba(245, 166, 35, 0.4); /* Chữ tên Bot rực sáng */
+}
 
 .hero p {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: #e2e8f0;
     max-width: 700px;
     margin-bottom: 40px;
 }
@@ -131,10 +178,16 @@ header {
     border-radius: 8px;
     font-weight: 700;
     font-size: 1.1rem;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    animation: pulse-glow 2s infinite; /* Nhịp đập sáng */
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.5);
 }
 
-.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-primary:hover { 
+    background-color: #ffb84d; 
+    box-shadow: 0 0 25px rgba(245, 166, 35, 0.9);
+    transform: translateY(-3px);
+}
 
 .btn-outline {
     border: 2px solid var(--primary);
@@ -144,11 +197,14 @@ header {
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s;
+    box-shadow: inset 0 0 10px rgba(245, 166, 35, 0.2), 0 0 10px rgba(245, 166, 35, 0.2);
 }
 
 .btn-outline:hover {
     background-color: var(--primary);
     color: #000;
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.6);
+    transform: translateY(-3px);
 }
 
 /* SECTION TITLES */
@@ -164,6 +220,7 @@ header {
     display: inline-block;
     border-bottom: 3px solid var(--primary);
     padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .section-container {
@@ -172,7 +229,7 @@ header {
     padding: 80px 20px;
 }
 
-/* SERVICES (BẢNG GIÁ) */
+/* SERVICES (BẢNG GIÁ) - TĂNG HIỆU ỨNG SÁNG VIỀN */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -184,7 +241,7 @@ header {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 30px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
 }
@@ -192,7 +249,8 @@ header {
 .service-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 10px 25px rgba(245, 166, 35, 0.15);
+    /* Hào quang viền cực sáng khi hover */
+    box-shadow: 0 0 30px rgba(245, 166, 35, 0.4), inset 0 0 15px rgba(245, 166, 35, 0.1);
 }
 
 .service-title {
@@ -207,12 +265,14 @@ header {
     font-weight: 800;
     color: var(--primary);
     margin-bottom: 5px;
+    text-shadow: 0 0 15px rgba(245, 166, 35, 0.6); /* Giá tiền rực sáng */
 }
 
 .service-price span {
     font-size: 1rem;
     color: var(--text-muted);
     font-weight: 500;
+    text-shadow: none;
 }
 
 .service-features {
@@ -230,7 +290,10 @@ header {
     gap: 10px;
 }
 
-.service-features li i { color: var(--primary); }
+.service-features li i { 
+    color: var(--primary); 
+    filter: drop-shadow(0 0 4px var(--primary)); /* Dấu tick sáng */
+}
 
 .btn-block {
     display: block;
@@ -243,11 +306,14 @@ header {
     border-radius: 6px;
     font-weight: 700;
     transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(245, 166, 35, 0.1);
 }
 
 .service-card:hover .btn-block {
     background-color: var(--primary);
     color: #000;
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.6); /* Nút bên trong thẻ cũng sáng bừng lên */
+    animation: none; /* Tắt nhịp đập khi hover thẻ để khỏi rối */
 }
 
 /* USER GUIDE (HƯỚNG DẪN) */
@@ -256,6 +322,7 @@ header {
     border-radius: 12px;
     padding: 40px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .guide-section { margin-bottom: 40px; }
@@ -266,6 +333,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-shadow: 0 0 8px rgba(245, 166, 35, 0.4);
 }
 
 .cmd-box {
@@ -276,6 +344,13 @@ header {
     margin-bottom: 15px;
     font-family: monospace;
     font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.cmd-box:hover {
+    background-color: rgba(245, 166, 35, 0.05);
+    box-shadow: inset 0 0 15px rgba(245, 166, 35, 0.1);
+    border-left-color: #fff;
 }
 
 .cmd-box span { color: var(--text-muted); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; margin-left: 10px; }
@@ -309,6 +384,7 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
+    box-shadow: 0 0 10px rgba(245, 166, 35, 0.5); /* Số bước sáng */
 }
 
 /* FEATURE LIST LƯỚI */
@@ -325,11 +401,27 @@ header {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
 }
 
-.feature-item:hover { border-color: var(--primary); }
-.feature-item i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+.feature-item:hover { 
+    border-color: var(--primary); 
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.3); /* Khung tính năng phát sáng */
+    transform: scale(1.05);
+}
+
+.feature-item i { 
+    font-size: 2rem; 
+    color: var(--primary); 
+    margin-bottom: 15px; 
+    filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.8)); /* Icon bừng sáng */
+    transition: all 0.3s;
+}
+
+.feature-item:hover i {
+    transform: scale(1.1);
+}
+
 .feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
 .feature-item p { font-size: 0.85rem; color: var(--text-muted); }
 
@@ -340,9 +432,10 @@ header {
     text-align: center;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: inset 0 20px 50px rgba(0,0,0,0.5);
 }
 
-.cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255,255,255,0.2); }
 .cta-section p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
 
 footer {
@@ -357,22 +450,4 @@ footer {
     .nav-links { display: none; }
     .hero h1 { font-size: 2rem; }
     .hero-btns { flex-direction: column; }
-}
-/* NÚT CHUYỂN ĐỔI NGÔN NGỮ (LANG SWITCH) */
-.lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-}
-.lang-switch a {
-    color: var(--text-muted);
-    transition: color 0.3s;
-}
-.lang-switch a.active {
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
-}
-.lang-switch a:hover {
-    color: var(--primary);
 }
