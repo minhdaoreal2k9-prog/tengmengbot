@@ -3,173 +3,552 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guzhenren Bot - Dịch vụ Auto ROK Chuyên Nghiệp</title>
-    <meta name="description" content="Cung cấp dịch vụ bot auto Rise of Kingdoms (Auto ROK) an toàn, chuyên nghiệp. Điều khiển 100% qua Discord. Dùng thử miễn phí 1 ngày.">
-    <link rel="canonical" href="https://autorok.vn/">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://images8.alphacoders.com/117/1176440.jpg" type="image/jpeg">
+    <title>TengMeng Bot - Dịch Vụ Auto ROK Chuyên Nghiệp</title>
+    <meta name="description" content="Cung cấp dịch vụ bot auto Rise of Kingdoms (Auto ROK) an toàn, chuyên nghiệp. Điều khiển 100% qua Discord, hỗ trợ Zalo. Dùng thử miễn phí 1 ngày.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151b2b;
+            --bg-card-hover: #1e2638;
+            --primary: #f5a623; /* Màu vàng cam đặc trưng ROK */
+            --primary-hover: #e09612;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        header {
+            background-color: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .btn-zalo { background-color: #0068ff; color: white; }
+        .btn-discord { background-color: #5865F2; color: white; }
+        
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(11, 15, 25, 0.8), var(--bg-main)), url('https://images8.alphacoders.com/117/1176440.jpg') center/cover;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover { background-color: var(--primary-hover); }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #000;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-block;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* SERVICES (BẢNG GIÁ) - Giống hệt lưới thẻ của nhrok */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(245, 166, 35, 0.15);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .service-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .service-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i { color: var(--primary); }
+
+        .btn-block {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(245, 166, 35, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .btn-block {
+            background-color: var(--primary);
+            color: #000;
+        }
+
+        /* USER GUIDE (HƯỚNG DẪN) */
+        .guide-container {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-section { margin-bottom: 40px; }
+        .guide-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cmd-box {
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 15px;
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+
+        .cmd-box span { color: var(--text-muted); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; margin-left: 10px; }
+        .cmd-box strong { color: #fff; }
+
+        .step-list {
+            list-style: none;
+            counter-reset: my-awesome-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .step-list li::before {
+            counter-increment: my-awesome-counter;
+            content: counter(my-awesome-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary);
+            color: #000;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* FEATURE LIST LƯỚI (Giống nhrok) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background-color: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .feature-item:hover { border-color: var(--primary); }
+        .feature-item i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .feature-item p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* FOOTER & CTA */
+        .cta-section {
+            background-color: var(--bg-card);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .hero-btns { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar glass-effect">
-        <div class="navbar-container">
-            <a href="#" class="nav-logo">Guzhenren<span>Bot</span></a>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label"><span></span><span></span><span></span></label>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Trang chủ</a></li>
-                <li><a href="#features" class="nav-link">Tính năng</a></li>
-                <li><a href="#showcase" class="nav-link">Hình ảnh</a></li>
-                <li><a href="#pricing" class="nav-link">Bảng giá</a></li>
-                <li><a href="#how-to-use" class="nav-link">Hướng dẫn</a></li>
-                <li class="nav-item lang-switcher">
-                    <a href="index.html" class="active-lang">VI</a> / <a href="en.html">EN</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content fade-in-up">
-            <span class="badge">🔥 Tự động hóa 100% qua Discord</span>
-            <h1>Tối Ưu Hóa Trải Nghiệm<br><span class="highlight">Rise of Kingdoms</span></h1>
-            <p>Bận rộn công việc hay học tập? Đừng lo! Guzhenren Bot giúp bạn tự động hóa mọi tác vụ nhàm chán nhất như farm, đánh man rợ, huấn luyện lính với độ an toàn tuyệt đối.</p>
-            <div class="cta-buttons">
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-primary glow-effect" target="_blank">THAM GIA DISCORD</a>
-                <a href="https://zalo.me/g/wthsmt472" class="btn btn-outline" target="_blank">NHÓM ZALO</a>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><i class="fa-solid fa-robot"></i> TENGMENG BOT</a>
+            <div class="nav-links">
+                <a href="#services">DỊCH VỤ</a>
+                <a href="#guide">HƯỚNG DẪN</a>
+                <a href="#features">TÍNH NĂNG</a>
+            </div>
+            <div class="social-btns">
+                <a href="https://zalo.me/g/oehnep941" target="_blank" class="btn-sm btn-zalo">ZALO</a>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-sm btn-discord">DISCORD</a>
             </div>
         </div>
     </header>
 
-    <section id="features" class="container">
-        <h2 class="section-title">TÍNH NĂNG ĐỘC ĐÁO</h2>
-        <div class="features-grid">
-            <div class="feature-card glass-effect fade-in-up">
-                <div class="icon">🪓</div>
-                <h3>Phát Triển Kinh Tế</h3>
-                <ul>
-                    <li>Thu thập Tài nguyên & Đá quý</li>
-                    <li>Sản xuất vật liệu & pha lê</li>
-                    <li>Tự động dùng tăng tốc</li>
+    <section class="hero">
+        <h1><span>TENGMENG BOT</span> PROFESSIONAL GAMING SERVICES</h1>
+        <p>Giải pháp tự động hóa chuyên nghiệp cho Rise of Kingdoms. Giúp bạn rảnh tay, tiết kiệm thời gian mà tài khoản vẫn phát triển thần tốc 24/7. Điều khiển 100% qua Discord an toàn, tiện lợi.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-primary">XEM DỊCH VỤ</a>
+            <a href="https://discord.gg/uzVS5nbz3t" class="btn-outline" target="_blank">LIÊN HỆ NGAY</a>
+        </div>
+    </section>
+
+    <section id="services" class="section-container">
+        <div class="section-title">
+            <h2>Dịch vụ của chúng tôi</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3 class="service-title">GÓI TRẢI NGHIỆM</h3>
+                <div class="service-price">120k <span>/ tuần</span></div>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Thu thập mọi tài nguyên</li>
+                    <li><i class="fa-solid fa-check"></i> Săn man rợ tối ưu AP</li>
+                    <li><i class="fa-solid fa-check"></i> Tự động Help & Cống hiến</li>
+                    <li><i class="fa-solid fa-check"></i> Điều khiển qua Discord</li>
+                    <li><i class="fa-solid fa-check"></i> Hỗ trợ kỹ thuật 24/7</li>
                 </ul>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
             </div>
-            <div class="feature-card glass-effect fade-in-up">
-                <div class="icon">⚔️</div>
-                <h3>Tác Vụ Quân Sự</h3>
-                <ul>
-                    <li>Săn Man rợ & Kẻ cướp (Tối ưu AP)</li>
-                    <li>Tự động mở/tham gia Rally</li>
-                    <li>Huấn luyện & Chữa thương lính</li>
+
+            <div class="service-card">
+                <h3 class="service-title">GÓI THÁNG</h3>
+                <div class="service-price">450k <span>/ tháng</span></div>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Bao gồm mọi tính năng cơ bản</li>
+                    <li><i class="fa-solid fa-check"></i> Farm Gems giới hạn an toàn</li>
+                    <li><i class="fa-solid fa-check"></i> Tự động Rally Pháo đài</li>
+                    <li><i class="fa-solid fa-check"></i> Tự động Join Rally</li>
+                    <li><i class="fa-solid fa-check"></i> Sản xuất vật liệu xưởng rèn</li>
                 </ul>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
             </div>
-            <div class="feature-card glass-effect fade-in-up">
-                <div class="icon">🤝</div>
-                <h3>Hỗ Trợ Liên Minh</h3>
-                <ul>
-                    <li>Tự động "Help" & Cống hiến</li>
-                    <li>Nhận quà Rương liên minh</li>
-                    <li>Nhận tài nguyên lãnh thổ</li>
+
+            <div class="service-card">
+                <h3 class="service-title">GÓI QUÝ (TIẾT KIỆM)</h3>
+                <div class="service-price">1.300k <span>/ 3 tháng</span></div>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Bao gồm mọi tính năng VIP</li>
+                    <li><i class="fa-solid fa-check"></i> Tự động Huấn luyện lính</li>
+                    <li><i class="fa-solid fa-check"></i> Mua đồ Thương nhân bí ẩn</li>
+                    <li><i class="fa-solid fa-check"></i> Nhận quà Đăng nhập & VIP</li>
+                    <li><i class="fa-solid fa-check"></i> Tiết kiệm hơn 50k/tháng</li>
                 </ul>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
             </div>
-            <div class="feature-card glass-effect fade-in-up">
-                <div class="icon">⚙️</div>
-                <h3>Điều Khiển Thông Minh</h3>
-                <ul>
-                    <li>Điều khiển 100% qua Discord</li>
-                    <li>Lệnh <code>show</code> xem màn hình thật</li>
-                    <li>Tự động bật khiên chống Scout</li>
+
+            <div class="service-card">
+                <h3 class="service-title">GÓI NĂM (ĐAM MÊ)</h3>
+                <div class="service-price">5.000k <span>/ năm</span></div>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Toàn quyền sử dụng Auto bot</li>
+                    <li><i class="fa-solid fa-check"></i> Ưu tiên cập nhật tính năng mới</li>
+                    <li><i class="fa-solid fa-check"></i> Chống kẹt, chống check siêu việt</li>
+                    <li><i class="fa-solid fa-check"></i> Nhận tối đa ưu đãi từ hệ thống</li>
+                    <li><i class="fa-solid fa-check"></i> Tối ưu nhất cho tay to cày cuốc</li>
                 </ul>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ĐẶT MUA NGAY</a>
             </div>
         </div>
     </section>
 
-    <section id="showcase" class="container">
-        <h2 class="section-title">HÌNH ẢNH THỰC TẾ TỪ BOT</h2>
-        <p class="text-center" style="color: #c0c0d0; margin-bottom: 40px;">Giao diện điều khiển mượt mà, trực quan ngay trên điện thoại/máy tính của bạn.</p>
-        <div class="gallery-grid">
-            <img src="show.jfif" alt="Lệnh show màn hình" class="glass-effect gallery-img">
-            <img src="start5.jfif" alt="Khởi động bot" class="glass-effect gallery-img">
-            <img src="B2real.jfif" alt="Admin gắn quyền" class="glass-effect gallery-img">
-            <img src="stop.jfif" alt="Dừng bot an toàn" class="glass-effect gallery-img">
+    <section id="guide" class="section-container">
+        <div class="section-title">
+            <h2>HƯỚNG DẪN SỬ DỤNG BOT</h2>
         </div>
-    </section>
 
-    <section id="pricing" class="container">
-        <h2 class="section-title">BẢNG GIÁ DỊCH VỤ</h2>
-        <p class="text-center" style="color: #c0c0d0; margin-bottom: 40px;">Hỗ trợ dùng thử miễn phí 1 ngày trước khi thanh toán!</p>
-        <div class="pricing-grid">
-            <div class="price-card glass-effect">
-                <h3>Gói Tuần</h3>
-                <div class="price">120K<span>/ Tuần</span></div>
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-outline-full">Đăng ký ngay</a>
-            </div>
-            <div class="price-card glass-effect popular">
-                <div class="popular-badge">Khuyên Dùng</div>
-                <h3>Gói Tháng</h3>
-                <div class="price">450K<span>/ Tháng</span></div>
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-primary-full">Đăng ký ngay</a>
-            </div>
-            <div class="price-card glass-effect">
-                <h3>Gói Quý</h3>
-                <div class="price">1.250K<span>/ 3 Tháng</span></div>
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-outline-full">Đăng ký ngay</a>
-            </div>
-            <div class="price-card glass-effect">
-                <h3>Gói Năm</h3>
-                <div class="price">4.899K<span>/ Năm</span></div>
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-outline-full">Đăng ký ngay</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-to-use" class="container">
-        <h2 class="section-title">HƯỚNG DẪN SỬ DỤNG TỪ A-Z</h2>
-        <div class="timeline">
-            <div class="timeline-item glass-effect fade-in-up">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                    <h3>Cung cấp thông tin</h3>
-                    <p>Gửi Email (đã liên kết game) và Mã xác nhận (Login code) cho Admin qua Discord/Zalo.</p>
+        <div class="guide-container">
+            <div class="guide-section">
+                <h3><i class="fa-solid fa-terminal"></i> Lệnh Cơ Bản Discord</h3>
+                <div class="cmd-box">
+                    <strong>start</strong> <span>→ Khởi động bot bắt đầu chu trình chạy.</span>
+                </div>
+                <div class="cmd-box">
+                    <strong>stop</strong> <span>→ Tạm dừng bot an toàn.</span>
+                </div>
+                <div class="cmd-box">
+                    <strong>show</strong> <span>→ Bot chụp và gửi ảnh màn hình game thực tế của bạn.</span>
                 </div>
             </div>
-            <div class="timeline-item glass-effect fade-in-up">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                    <h3>Nhận quyền điều khiển</h3>
-                    <p>Admin sẽ gán quyền bot vào kênh private của bạn. Bạn sẽ nhận được tin nhắn xác nhận.</p>
-                </div>
-            </div>
-            <div class="timeline-item glass-effect fade-in-up">
-                <div class="step-num">3</div>
-                <div class="step-content">
-                    <h3>Thao tác lệnh cơ bản</h3>
-                    <p>Gõ <code>start</code> để chạy bot, <code>show</code> để xem tiến trình hiện tại qua ảnh chụp màn hình, và <code>stop</code> để dừng an toàn.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="alert-box glass-effect fade-in-up" style="margin-top: 40px;">
-            <h3>💡 Lưu ý cài đặt tự động</h3>
-            <p>Các tính năng Help, Đóng góp, Nhận quà đều tự động. Dưới đây là mặc định (có thể yêu cầu đổi):</p>
-            <ul>
-                <li><strong>Đánh man rợ:</strong> 3 đạo quân (khi AP > 500).</li>
-                <li><strong>Thu thập gem:</strong> 2900 – 3000 gem/ngày (sau đó tự chuyển sang farm mỏ).</li>
-                <li><strong>Luyện lính:</strong> T4 (Bộ, Kỵ, Cung) và T1 (Xe).</li>
-            </ul>
+            <div class="guide-section">
+                <h3><i class="fa-solid fa-list-check"></i> Các Bước Cài Đặt Ban Đầu</h3>
+                <ul class="step-list">
+                    <li><strong>Thanh toán và Gửi thông tin:</strong> Tham gia Discord/Zalo liên hệ Owner. Cung cấp Email (liên kết game) và Mã xác nhận cho Admin.</li>
+                    <li><strong>Admin Gán Quyền:</strong> Sau khi nhận thông tin, Admin sẽ set quyền vào hệ thống. Bạn sẽ nhận được tin nhắn xác nhận từ Bot trên Discord.</li>
+                    <li><strong>Điều khiển Bot:</strong> Mở kênh chat riêng với Bot, gõ <code>start</code> để chạy. Dùng <code>show</code> để theo dõi và <code>stop</code> nếu cần chuyển acc.</li>
+                    <li><strong>Thiết lập Cài đặt (Theo yêu cầu):</strong> Bot đã tự động Help, Farm, Nhận quà. Bạn có thể yêu cầu Admin chỉnh sửa: Đánh man rợ (đạo quân/AP), Giới hạn Gem, Bậc lính luyện (T1-T4).</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container text-center">
-            <h2>Sẵn sàng xưng bá Rise of Kingdoms?</h2>
-            <p>Tham gia cộng đồng và nhận ngay 1 ngày dùng thử miễn phí.</p>
-            <div class="cta-buttons" style="margin-top: 20px;">
-                <a href="https://discord.gg/uzVS5nbz3t" class="btn btn-primary">THAM GIA DISCORD</a>
-            </div>
-            <p style="margin-top: 40px; font-size: 0.9rem; color: #6a6a8a;">© 2026 Guzhenren Bot (autorok.vn). All rights reserved.</p>
+    <section id="features" class="section-container" style="padding-top: 20px;">
+        <div class="section-title">
+            <h2>DANH SÁCH TÍNH NĂNG</h2>
         </div>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <h4>Farm Tài Nguyên</h4>
+                <p>Thu thập ngô, gỗ, đá, vàng hoàn toàn tự động.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-regular fa-gem"></i>
+                <h4>Farm Đá Quý</h4>
+                <p>Tự động cày Gem với giới hạn cài đặt trước.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-skull"></i>
+                <h4>Săn Man Rợ</h4>
+                <p>Tự động xả AP đánh man rợ an toàn hiệu quả.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-chess-rook"></i>
+                <h4>Rally Pháo Đài</h4>
+                <p>Tự mở Rally hoặc Join Rally liên minh.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h4>Hỗ trợ Liên Minh</h4>
+                <p>Auto Help, cống hiến công nghệ, nhận rương.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>Huấn luyện Lính</h4>
+                <p>Auto train quân đội (T1 đến T4 tùy chọn).</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-store"></i>
+                <h4>Thương Nhân</h4>
+                <p>Tự động mua đồ Thương nhân bí ẩn.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-gift"></i>
+                <h4>Quà Hàng Ngày</h4>
+                <p>Tự nhận VIP, quà đăng nhập, quán rượu, nhiệm vụ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>SẴN SÀNG ĐỂ BẮT ĐẦU?</h2>
+        <p>Tham gia cộng đồng của chúng tôi ngay hôm nay để nhận tư vấn và dùng thử miễn phí 1 ngày!</p>
+        <div class="hero-btns" style="justify-content: center;">
+            <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-primary" style="background-color: #5865F2; color: white;"><i class="fa-brands fa-discord"></i> LIÊN HỆ DISCORD</a>
+            <a href="https://zalo.me/g/wthsmt472" target="_blank" class="btn-primary" style="background-color: #0068ff; color: white;"><i class="fa-solid fa-comment"></i> LIÊN HỆ ZALO</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - TengMeng Bot ROK Services. All rights reserved. | Phát triển bởi autorok.vn</p>
     </footer>
 
 </body>
