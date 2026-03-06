@@ -10,6 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS chia cột cho danh sách lệnh dài */
+        .cmd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .cmd-grid .cmd-box {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .cmd-grid .cmd-box strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .cmd-grid .cmd-box span {
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -65,7 +87,7 @@
                 <h3 class="service-title">MONTHLY PLAN</h3>
                 <div class="service-price">18$ <span>/ month</span></div>
                 <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> All Trial features included</li>
+                    <li><i class="fa-solid fa-check"></i> Includes all Trial benefits</li>
                     <li><i class="fa-solid fa-check"></i> Safe Gem farming limit</li>
                     <li><i class="fa-solid fa-check"></i> Auto Rally Fortresses</li>
                     <li><i class="fa-solid fa-check"></i> Auto Join Rallies</li>
@@ -78,11 +100,11 @@
                 <h3 class="service-title">QUARTERLY PLAN</h3>
                 <div class="service-price">52$ <span>/ 3 months</span></div>
                 <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> All Monthly features</li>
+                    <li><i class="fa-solid fa-check"></i> Includes all Monthly benefits</li>
                     <li><i class="fa-solid fa-check"></i> Auto Troop Training</li>
                     <li><i class="fa-solid fa-check"></i> Mysterious Merchant Auto-buy</li>
                     <li><i class="fa-solid fa-check"></i> Claim VIP & Login Gifts</li>
-                    <li><i class="fa-solid fa-check"></i> Discounted Pricing</li>
+                    <li><i class="fa-solid fa-check"></i> Long-term Cost Savings</li>
                 </ul>
                 <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-block">ORDER NOW</a>
             </div>
@@ -92,7 +114,7 @@
                 <div class="service-price">200$ <span>/ year</span></div>
                 <ul class="service-features">
                     <li><i class="fa-solid fa-check"></i> Unlimited Bot Access</li>
-                    <li><i class="fa-solid fa-check"></i> Priority Feature Updates</li>
+                    <li><i class="fa-solid fa-check"></i> Priority software updates</li>
                     <li><i class="fa-solid fa-check"></i> Advanced Anti-detection</li>
                     <li><i class="fa-solid fa-check"></i> Maximize Event Rewards</li>
                     <li><i class="fa-solid fa-check"></i> Best for Hardcore Grinders</li>
@@ -104,30 +126,52 @@
 
     <section id="guide" class="section-container">
         <div class="section-title">
-            <h2>BOT USER GUIDE</h2>
+            <h2>BOT COMMANDS & GUIDE</h2>
         </div>
 
         <div class="guide-container">
             <div class="guide-section">
-                <h3><i class="fa-solid fa-terminal"></i> Basic Discord Commands</h3>
-                <div class="cmd-box">
-                    <strong>start</strong> <span>→ Start the bot's automated cycle.</span>
-                </div>
-                <div class="cmd-box">
-                    <strong>stop</strong> <span>→ Safely pause the bot.</span>
-                </div>
-                <div class="cmd-box">
-                    <strong>show</strong> <span>→ Capture and send a live screenshot of your game.</span>
+                <h3><i class="fa-solid fa-terminal"></i> Bot Control Commands</h3>
+                <div class="cmd-grid">
+                    <div class="cmd-box">
+                        <strong>Start</strong> <span>Start the bot's automated cycle.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Stop</strong> <span>Close / pause the bot safely.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Check</strong> <span>Check status of features and account.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Gem</strong> <span>Toggle gem farming (default 5 marches).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Bar</strong> <span>Toggle barbarian hunting (default 3 marches).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Fort</strong> <span>Toggle joining fort rallies (default 1 march).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Rally</strong> <span>Toggle auto-starting rallies.</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Collect</strong> <span>Toggle resource gathering (default 5 marches).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Heal</strong> <span>Toggle healing troops (amount customizable).</span>
+                    </div>
+                    <div class="cmd-box">
+                        <strong>Mar</strong> <span>Toggle attacking marauders (default 3 marches).</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="guide-section">
-                <h3><i class="fa-solid fa-list-check"></i> Setup Instructions</h3>
+            <div class="guide-section" style="margin-top: 40px;">
+                <h3><i class="fa-solid fa-list-check"></i> Initial Setup Instructions</h3>
                 <ul class="step-list">
                     <li><strong>Send Info:</strong> Join our Discord and contact the Owner. Provide your Email (linked to the game) and Login Code.</li>
                     <li><strong>Admin Confirmation:</strong> The Admin will assign your account to our system. You will receive a confirmation message from the Bot on Discord.</li>
                     <li><strong>Control Bot:</strong> Open a private chat with the Bot, type <code>start</code> to activate. Use <code>show</code> to monitor the screen and <code>stop</code> when necessary.</li>
-                    <li><strong>Custom Settings:</strong> Auto Help, Farming, and Gifts are enabled by default. You can ask Admin to customize: Barbarians (Armies/AP), Gem limits, or Training (T1-T4).</li>
                 </ul>
             </div>
         </div>
