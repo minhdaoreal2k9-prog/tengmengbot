@@ -1,645 +1,346 @@
-/* Cài đặt chung */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1a1a2e; /* Màu nền xanh đen tối */
-    color: #e0e0e0; /* Màu chữ trắng ngà */
-    margin: 0;
-    line-height: 1.6;
-    padding-top: 60px; 
-}
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-}
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #FF9900; /* SỬA MÀU CAM */
-    display: inline-block;
-    padding-bottom: 10px;
-}
-section {
-    padding: 60px 20px;
-    text-align: center;
+/* ROOT VARIABLES - Dễ dàng thay đổi màu sắc sau này */
+:root {
+    --bg-dark: #0f1016;
+    --bg-card: rgba(22, 24, 35, 0.7);
+    --primary: #FF9900;
+    --primary-hover: #ffad33;
+    --text-main: #ffffff;
+    --text-muted: #9ba1a6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(12px);
 }
 
-/* 1. THANH MENU (HIỆU ỨNG KÍNH MỜ) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.text-center { text-align: center; }
+
+/* UTILITIES: Glassmorphism & Neon */
+.glass-effect {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.glow-effect {
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.4);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-primary {
+    background-color: var(--primary);
+    color: #000;
+    border: 2px solid var(--primary);
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.5);
+}
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: #000;
+}
+.btn-primary-full, .btn-outline-full {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.btn-primary-full { background: var(--primary); color: #000; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold;}
+.btn-outline-full { background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold;}
+
+/* NAVBAR */
 .navbar {
-    background-color: rgba(22, 22, 37, 0.7); 
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    border-bottom: 1px solid #3a3a5a;
-    padding: 0 40px; 
-    height: 60px; 
-    position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    top: 0; width: 100%;
     z-index: 1000;
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
 }
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    height: 100%; 
+    padding: 0 20px;
+    height: 100%;
 }
 .nav-logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #FF9900; /* SỬA MÀU CAM */
+    color: var(--text-main);
     text-decoration: none;
+}
+.nav-logo span {
+    color: var(--primary);
 }
 .nav-menu {
-    list-style: none;
     display: flex;
-    gap: 20px; 
-    margin: 0;
-    padding: 0;
-    align-items: center; 
+    list-style: none;
+    gap: 30px;
+    align-items: center;
 }
 .nav-link {
-    color: #e0e0e0;
+    color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.9rem; 
-    font-weight: 700;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s;
 }
-.nav-link:hover {
-    color: #FF9900; /* SỬA MÀU CAM */
-    border-bottom-color: #FF9900; /* SỬA MÀU CAM */
+.nav-link:hover { color: var(--primary); }
+.lang-switcher a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
 }
-.nav-toggle {
-    display: none; 
-}
-.nav-toggle-label {
-    display: none; 
-    cursor: pointer;
-    padding: 10px;
-}
-.nav-toggle-label span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    margin: 5px 0;
-    transition: all 0.3s;
-}
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: 20px; 
-}
-.lang-switcher span {
-    color: #4a4a6a; 
-    font-weight: 700;
-}
-.lang-switcher .nav-link {
-    font-size: 0.9rem;
-    padding: 2px 5px;
-    border-bottom: none; 
-}
-.lang-switcher .nav-link:hover {
-    color: #FF9900; /* SỬA MÀU CAM */
-    border-bottom: none;
-}
-.lang-switcher .active-lang {
-    color: #FF9900; /* SỬA MÀU CAM */
-    font-weight: 700;
-    border: 1px solid #FF9900; /* SỬA MÀU CAM */
-    border-radius: 4px;
-}
+.lang-switcher .active-lang { color: var(--primary); }
+.nav-toggle, .nav-toggle-label { display: none; }
 
-/* 2. Hero Section */
+/* HERO SECTION */
 .hero-section {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    text-align: center;
-    padding: 40px 20px;
-    position: relative; 
-    overflow: hidden; 
-    background-color: #1a1a2e;
-    background-image: url('hero-bg.jpg'); 
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(26, 26, 46, 0.4); 
-    z-index: 2;
-}
-.hero-content {
-    position: relative; 
-    z-index: 3; 
-    margin-top: 25vh; 
-}
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; 
-}
-.cta-button {
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-    border: 2px solid transparent;
-    background-color: rgba(22, 22, 37, 0.5); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-.cta-button.primary {
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    border-color: #FF9900; /* SỬA MÀU CAM */
-    backdrop-filter: none;
-}
-.cta-button.primary:hover {
-    background-color: #ffad33; /* SỬA MÀU CAM (Hover) */
-    border-color: #ffad33; /* SỬA MÀU CAM (Hover) */
-    transform: translateY(-3px);
-}
-.cta-button.secondary {
-    background-color: transparent;
-    color: #FF9900; /* SỬA MÀU CAM */
-    border-color: #FF9900; /* SỬA MÀU CAM */
-}
-.cta-button.secondary:hover {
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    transform: translateY(-3px);
-    backdrop-filter: none;
-}
-
-/* (MỚI) Đoạn văn mô tả Hero */
-.hero-description {
-    max-width: 700px;
-    margin: 30px auto 0 auto;
-    font-size: 1.1rem;
-    color: #e0e0e0;
-    line-height: 1.7;
-    background-color: rgba(22, 22, 37, 0.7); /* Nền kính mờ */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-
-/* 3. Features Section (DẠNG TABS) */
-.features-detailed-section {
-    background-color: #161625;
-}
-.feature-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-    gap: 15px;
-    margin-bottom: 40px;
-}
-.tab-link {
-    background-color: rgba(36, 36, 62, 0.7); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 2px solid #3a3a5a;
-    color: #e0e0e0;
-    padding: 12px 25px;
-    border-radius: 50px; 
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 700;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: all 0.3s;
-}
-.tab-link:hover {
-    background-color: #3a3a5a;
-    border-color: #5a5a7a;
-}
-.tab-link.active {
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    border-color: #FF9900; /* SỬA MÀU CAM */
-    backdrop-filter: none; 
-}
-.tab-link svg {
-    width: 20px;
-    height: 20px;
-}
-.feature-content-area {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    background-color: #24243e;
-    padding: 30px;
-    border-radius: 10px;
-}
-.feature-content {
-    display: none; 
-    animation: fadeIn 0.5s; 
-}
-.feature-content.active {
-    display: block; 
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-.feature-content h3 {
-    color: #FF9900; /* SỬA MÀU CAM */
-    margin-top: 0;
-    font-size: 1.5rem;
-}
-.feature-content ul {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Chia 2 cột */
-    gap: 10px;
-}
-.feature-content li {
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1f2133 0%, #0f1016 100%);
     position: relative;
-    padding-left: 30px;
-    color: #c0c0d0;
+    padding: 0 20px;
 }
-.feature-content li::before {
+.badge {
+    display: inline-block;
+    background: rgba(255, 153, 0, 0.1);
+    color: var(--primary);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 153, 0, 0.3);
+}
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hero-content .highlight { color: var(--primary); }
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+.hero-content .cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* FEATURES GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.feature-card {
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+.feature-card ul {
+    list-style: none;
+    color: var(--text-muted);
+}
+.feature-card li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.feature-card li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #FF9900; /* SỬA MÀU CAM */
-    font-weight: 700;
+    color: var(--primary);
 }
 
-
-/* 4. How It Works */
-.steps-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-.step {
-    flex-basis: 30%;
-    min-width: 300px;
-    padding: 20px;
-}
-.step-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #FF9900; /* SỬA MÀU CAM */
-    border: 2px solid #FF9900; /* SỬA MÀU CAM */
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0 auto 20px;
-}
-
-/* 5. Bảng Lệnh */
-.commands-section {
-    background-color: #161625;
-}
-table {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto 0;
-    border-collapse: collapse;
-    background-color: #24243e;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-th, td {
-    border: 1px solid #4a4a6a;
-    padding: 15px;
-    text-align: left;
-}
-th {
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    font-size: 1.1rem;
-}
-tbody tr:nth-child(even) {
-    background-color: #1f1f33;
-}
-code {
-    background-color: #333;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 1.1rem;
-    color: #FF9900; /* SỬA MÀU CAM */
-}
-
-/* 6. PHẦN DÙNG THỬ */
-.free-trial-section {
-    background-color: #1a1a2e; 
-    border-top: 1px solid #3a3a5a;
-    border-bottom: 1px solid #3a3a5a;
-}
-.free-trial-section h2 {
-    color: #FF9900; /* SỬA MÀU CAM */
-    text-shadow: 0 0 8px rgba(255, 153, 0, 0.4); /* SỬA MÀU SHADOW */
-}
-.free-trial-section p {
-    font-size: 1.1rem;
-    color: #c0c0d0;
-    margin-bottom: 30px;
-}
-
-/* 7. Gói Thuê (SỬA LẠI THÀNH 4 CỘT) */
-.pricing-section {
-    background-color: #161625;
-}
+/* PRICING */
 .pricing-grid {
     display: grid;
-    /* Sửa: 4 cột trên desktop */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto 0;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 .price-card {
-    background-color: rgba(36, 36, 62, 0.7); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #4a4a6a;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
 }
-.price-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+.price-card:hover { transform: translateY(-10px); }
+.price-card.popular {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
 }
-.price-card h3 {
-    font-size: 1.3rem;
-    color: #fff;
-    margin-top: 0;
+.price-card.popular:hover { transform: scale(1.05) translateY(-10px); }
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
+.price-card h3 { color: var(--text-muted); font-size: 1.2rem; }
 .price-card .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FF9900; /* SỬA MÀU CAM */
-    margin: 10px 0;
-    text-shadow: 0 0 8px rgba(255, 153, 0, 0.4); /* SỬA MÀU SHADOW */
+    color: var(--text-main);
+    margin: 20px 0;
 }
-.price-card .duration {
+.price-card .price span {
     font-size: 1rem;
-    color: #aaa;
-    text-transform: uppercase;
-}
-.price-card p {
-    font-size: 0.9rem;
-    color: #c0c0d0;
-    margin-top: 15px;
+    color: var(--text-muted);
 }
 
-/* (Xóa CSS .price-card.highlight và @keyframes pulse-glow) */
-
-/* 8. Footer */
-.footer-cta {
-    background-color: #1a1a2e;
-    padding: 60px 20px;
-    border-top: 1px solid #3a3a5a;
+/* TIMELINE (HOW TO USE) */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
 }
-.footer-cta h2 {
-    border: none;
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    align-items: center;
 }
-.footer-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+.step-num {
+    background: var(--primary);
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
-
-/* 9. HIỆU ỨNG FADE-IN KHI CUỘN */
-.animated-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.animated-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 10. NÚT VỀ ĐẦU TRANG */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FF9900; /* SỬA MÀU CAM */
-    color: #1a1a2e;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 45px; 
-    text-decoration: none;
-    z-index: 999;
-    opacity: 0; 
-    visibility: hidden;
-    transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
-    transform: translateY(10px);
-}
-.scroll-to-top svg {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle; 
-}
-.scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.step-content h3 { color: var(--primary); margin-bottom: 5px; }
+.step-content p { color: var(--text-muted); margin: 0; }
+code {
+    background: rgba(255, 153, 0, 0.2);
+    color: var(--primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
 }
 
+/* ALERT BOX */
+.alert-box {
+    padding: 30px;
+    border-left: 5px solid var(--primary);
+}
+.alert-box h3 { color: var(--primary); margin-bottom: 15px;}
+.alert-box ul { list-style: inside; color: var(--text-muted); margin-top: 10px;}
 
-/* 11. Responsive cho mobile (Hamburger) */
-@media (max-width: 850px) { 
-    body {
-        padding-top: 60px; 
-    }
-    .navbar {
-        padding: 0 20px; 
-        background-color: rgba(22, 22, 37, 0.8); 
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-    .nav-logo {
-        font-size: 1.5rem; 
-    }
+/* FOOTER */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background: #0a0b10;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
     .nav-menu {
-        display: none; 
+        display: none;
         position: absolute;
-        top: 60px; 
-        left: 0;
-        right: 0;
-        background-color: #161625;
-        flex-direction: column; 
-        width: 100%;
-        text-align: left; 
-        gap: 0;
-        padding: 0;
-        border-bottom: 1px solid #3a3a5a;
-        box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+        top: 70px; left: 0; width: 100%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border-color);
     }
-    .nav-link {
-        display: block; 
-        padding: 15px 20px; 
-        border-bottom: 1px solid #3a3a5a; 
-    }
-    .nav-link:hover {
-        background-color: #24243e;
-        border-bottom-color: #3a3a5a;
-    }
-    .nav-menu .lang-switcher {
-        flex-direction: row; 
-        justify-content: center; 
-        padding: 10px;
-        border-bottom: 1px solid #3a3a5a;
-    }
-    .nav-menu .lang-switcher .nav-link {
-        border-bottom: none; 
-        padding: 5px 10px;
-    }
+    .nav-toggle:checked ~ .nav-menu { display: flex; }
     .nav-toggle-label {
         display: block;
+        cursor: pointer;
     }
-    .nav-toggle:checked ~ .nav-menu {
-        display: flex;
+    .nav-toggle-label span {
+        display: block; width: 25px; height: 3px; background: var(--primary); margin: 5px 0;
     }
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
-        opacity: 0;
-    }
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-    .hero-description {
-        margin-top: 20px;
-        font-size: 1rem;
-    }
-    .step {
-        flex-basis: 80%;
-    }
-    table {
-        font-size: 0.9rem;
-    }
-    
-    /* Sửa lại Tab-Features cho mobile */
-    .feature-tabs {
-        gap: 10px;
-    }
-    .tab-link {
-        font-size: 0.9rem;
-        padding: 10px 15px;
-    }
-    .feature-content ul {
-        grid-template-columns: 1fr; /* 1 cột trên mobile */
-    }
-    
-    /* Sửa Bảng giá cho mobile (2 cột) */
-    .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-/* =========================
-/* ==================================
-   (SỬA LỖI) CSS CHO MỤC HƯỚNG DẪN (Theme Tối)
-   ================================== */
-
-#how-to-use {
-    padding-top: 80px; 
-    background-color: #161625; /* SỬA: Màu nền tối giống các section khác */
-}
-
-/* SỬA: Thêm màu chữ sáng cho văn bản */
-#how-to-use p,
-#how-to-use .section-subtitle {
-    text-align: center;
-    color: #c0c0d0; /* SỬA: Thêm màu chữ sáng */
-}
-
-#how-to-use .section-subtitle {
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-}
-
-/* CSS cho từng bước */
-.step {
-    background-color: #24243e; /* SỬA: Nền tối cho card (giống bảng lệnh) */
-    border: 1px solid #4a4a6a; /* SỬA: Viền tối */
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    /* Giữ nguyên text-align: left từ file gốc của bạn */
-    text-align: left;
-}
-
-.step h3 {
-    margin-top: 0;
-    color: #FF9900; /* SỬA: Màu cam chủ đạo */
-    font-size: 1.5rem;
-    text-align: center; /* Cho tiêu đề Bước ra giữa */
-}
-
-.step img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
-    border: 1px solid #4a4a6a; /* SỬA: Viền tối cho ảnh */
-    display: block; /* Thêm để ảnh tự căn giữa */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* XÓA BỎ ".step code"
-Bạn hãy tìm và xóa quy tắc .step code (nếu có)
-để trang web dùng style "code" (màu cam) chung của bạn.
-*/
-
-/* CSS cho phần cài đặt bot */
-.bot-settings-highlight {
-    background-color: rgba(255, 153, 0, 0.1); /* SỬA: Nền vàng/cam trong suốt */
-    padding: 15px;
-    border-radius: 5px;
-    border-left: 5px solid #FF9900; /* SỬA: Viền cam */
-    margin: 20px 0;
-    color: #e0e0e0; /* SỬA: Thêm màu chữ sáng */
-    text-align: left;
-}
-
-#how-to-use ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: left;
-}
-
-#how-to-use ul li {
-    font-size: 1.05rem;
-    margin-bottom: 12px;
-    line-height: 1.6;
-    color: #c0c0d0; /* SỬA: Thêm màu chữ sáng */
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content .cta-buttons { flex-direction: column; }
+    .price-card.popular { transform: scale(1); }
+    .price-card.popular:hover { transform: translateY(-5px); }
+    .timeline-item { flex-direction: column; text-align: center; }
 }
