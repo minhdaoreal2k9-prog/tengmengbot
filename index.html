@@ -46,24 +46,19 @@
         </div>
 
         <div class="nav-container" id="nav-menu">
-            <div class="nav-header">
-                <i class="fa-solid fa-xmark close-btn" id="close-menu"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#services">DỊCH VỤ</a></li>
-                <li><a href="#guide">HƯỚNG DẪN</a></li>
-                <li><a href="#features">TÍNH NĂNG</a></li>
-                
-                <li class="lang-switch-sidebar">
+            <div class="nav-links">
+                <a href="#services">DỊCH VỤ</a>
+                <a href="#guide">HƯỚNG DẪN</a>
+                <a href="#features">TÍNH NĂNG</a>
+                <div class="lang-switch">
                     <a href="index.html" class="active">VI</a>
-                    <span>|</span>
+                    <span style="color: var(--text-muted)">|</span>
                     <a href="en.html">EN</a>
-                </li>
-            </ul>
-            
-            <div class="social-btns-sidebar">
-                <a href="https://zalo.me/g/oehnep941" target="_blank" class="btn-zalo-full">ZALO</a>
-                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-discord-full">DISCORD</a>
+                </div>
+            </div>
+            <div class="social-btns">
+                <a href="https://zalo.me/g/oehnep941" target="_blank" class="btn-sm btn-zalo">ZALO</a>
+                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-sm btn-discord">DISCORD</a>
             </div>
         </div>
     </div>
@@ -275,22 +270,17 @@
     <script>
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const closeBtn = document.getElementById('close-menu');
 
-// Mở menu khi nhấn 3 sọc
 hamburger.addEventListener('click', () => {
-    navMenu.classList.add('active');
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('toggle'); // Hiệu ứng biến thành dấu X
 });
 
-// Đóng menu khi nhấn dấu X
-closeBtn.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-});
-
-// Đóng menu khi chọn một mục
+// Đóng menu khi bấm vào link điều hướng (Dành cho Mobile)
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        hamburger.classList.remove('toggle');
     });
 });
     </script>
