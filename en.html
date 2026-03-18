@@ -37,24 +37,32 @@
 
     <header>
         <div class="navbar">
-            <a href="en.html" class="logo"><i class="fa-solid fa-robot"></i> TENGMENG BOT</a>
-            <div class="nav-links">
-                <a href="#services">SERVICES</a>
-                <a href="#guide">HOW TO USE</a>
-                <a href="#features">FEATURES</a>
-                
-                <div class="lang-switch">
-                    <a href="index.html">VI</a>
-                    <span style="color: var(--text-muted)">|</span>
-                    <a href="en.html" class="active">EN</a>
+            <a href="#" class="logo"><i class="fa-solid fa-robot"></i> TENGMENG BOT</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-container" id="nav-menu">
+                <div class="nav-links">
+                    <a href="#services">SERVICES</a>
+                    <a href="#guide">GUIDE</a>
+                    <a href="#features">FEATURES</a>
+                    <div class="lang-switch">
+                        <a href="index.html">VI</a>
+                        <span style="color: var(--text-muted)">|</span>
+                        <a href="en.html" class="active">EN</a>
+                    </div>
+                </div>
+                <div class="social-btns">
+                    <a href="https://zalo.me/g/oehnep941" target="_blank" class="btn-sm btn-zalo">ZALO</a>
+                    <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-sm btn-discord">DISCORD</a>
                 </div>
             </div>
-            <div class="social-btns">
-                <a href="https://discord.gg/uzVS5nbz3t" target="_blank" class="btn-sm btn-discord">DISCORD</a>
-            </div>
         </div>
-    </header>
-
+</header>
     <section class="hero">
         <h1><span>TENGMENG BOT</span> PROFESSIONAL GAMING SERVICES</h1>
         <p>Professional automation solutions for Rise of Kingdoms. Free up your hands, save time, and let your account grow rapidly 24/7. 100% controlled via Discord—safe and convenient.</p>
@@ -257,6 +265,22 @@
     <footer>
         <p>&copy; 2026 - TengMeng Bot ROK Services. All rights reserved. | Powered by autorok.vn</p>
     </footer>
+    <script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
 
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('toggle'); // Hiệu ứng biến thành dấu X
+});
+
+// Đóng menu khi bấm vào link điều hướng (Dành cho Mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('toggle');
+    });
+});
+    </script>
 </body>
 </html>
