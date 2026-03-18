@@ -450,10 +450,9 @@ footer {
     .nav-links { display: none; }
     .hero h1 { font-size: 2rem; }
     .hero-btns { flex-direction: column; }
-}
-/* Tùy chỉnh cho Menu 3 sọc */
+}/* Luôn hiển thị Hamburger cho cả PC và Mobile */
 .hamburger {
-    display: none; /* Mặc định ẩn trên PC */
+    display: flex !important;
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
@@ -464,55 +463,70 @@ footer {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: var(--primary, #FFB800);
+    background-color: var(--primary);
     transition: 0.3s;
     border-radius: 2px;
 }
 
-/* Khi màn hình nhỏ hơn 992px */
-@media (max-width: 991px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-container {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Ẩn menu ra ngoài màn hình */
-        width: 280px;
-        height: 100vh;
-        background-color: #1a1a1a;
-        display: flex;
-        flex-direction: column;
-        padding: 80px 30px;
-        gap: 30px;
-        transition: 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-        z-index: 1000;
-    }
-
-    .nav-container.active {
-        right: 0; /* Hiện menu khi có class active */
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px !important;
-    }
-
-    .social-btns {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .social-btns a {
-        width: 100%;
-        text-align: center;
-    }
+/* Sidebar Menu đồng bộ */
+.nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ẩn menu */
+    width: 280px;
+    height: 100vh;
+    background-color: rgba(11, 15, 25, 0.98);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    transition: 0.5s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    z-index: 2000;
 }
 
-/* Hiệu ứng biến nút 3 sọc thành dấu X */
-.hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
-.hamburger.toggle span:nth-child(2) { opacity: 0; }
-.hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
+.nav-container.active {
+    right: 0; /* Hiện menu */
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.nav-links li a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+/* Chuyển ngôn ngữ trong sidebar */
+.lang-switch-sidebar {
+    display: flex;
+    gap: 15px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.lang-switch-sidebar a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+.close-btn {
+    font-size: 2rem;
+    color: var(--primary);
+    cursor: pointer;
+    float: right;
+}
+
+.social-btns-sidebar {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
