@@ -272,24 +272,25 @@
     <footer>
         <p>&copy; 2026 - TengMeng Bot ROK Services. All rights reserved. | Phát triển bởi autorok.vn</p>
     </footer>
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const closeBtn = document.getElementById('close-menu');
 
-    hamburger.addEventListener('click', () => {
-        // Bật/tắt menu
-        navMenu.classList.toggle('active');
-        // Xoay nút thành dấu X
-        hamburger.classList.toggle('toggle');
-    });
+// Mở menu khi nhấn 3 sọc
+hamburger.addEventListener('click', () => {
+    navMenu.classList.add('active');
+});
 
-    // Đóng menu khi bấm vào một link điều hướng
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('toggle');
-        });
+// Đóng menu khi nhấn dấu X
+closeBtn.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+});
+
+// Đóng menu khi chọn một mục
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
     });
-</script>
+});
 </body>
 </html>
