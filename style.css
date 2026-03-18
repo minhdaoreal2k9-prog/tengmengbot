@@ -489,8 +489,9 @@ footer {
     align-items: center;
 }
 
+/* 1. Mặc định ẩn nút 3 sọc trên PC */
 .hamburger {
-    display: none; /* Ẩn trên PC */
+    display: none !important; /* Dùng !important để chắc chắn không bị ghi đè */
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
@@ -506,16 +507,23 @@ footer {
     border-radius: 2px;
 }
 
-/* KHI CHUYỂN SANG MOBILE (Dưới 991px) */
+/* 2. Thiết lập hiển thị cho Mobile (Dưới 991px) */
 @media (max-width: 991px) {
+    /* Hiện nút 3 sọc */
     .hamburger {
-        display: flex; /* Hiện nút 3 sọc */
+        display: flex !important;
     }
 
+    /* Ẩn thanh menu ngang chính */
+    .nav-links, .social-btns {
+        display: none; 
+    }
+
+    /* Cấu trúc sidebar khi nhấn 3 sọc */
     .nav-container {
         position: fixed;
         top: 0;
-        right: -100%; /* Ẩn menu ra ngoài */
+        right: -100%;
         width: 280px;
         height: 100vh;
         background-color: rgba(11, 15, 25, 0.98);
@@ -529,22 +537,14 @@ footer {
     }
 
     .nav-container.active {
-        right: 0; /* Hiện menu khi bấm 3 sọc */
+        right: 0;
     }
 
-    .nav-links {
+    /* Hiện lại các link bên trong sidebar */
+    .nav-container .nav-links {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
-    }
-
-    .social-btns {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .social-btns a {
-        width: 100%;
-        text-align: center;
     }
 }
