@@ -1,202 +1,99 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn sử dụng - Teng Meng Bot</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-        }
-        .guide-section {
-            margin-bottom: 30px;
-        }
-        .lang-switch {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .lang-switch a {
-            padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0 5px;
-        }
-        .lang-switch a:hover {
-            background-color: #2980b9;
-        }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #eee;
-            margin: 30px 0;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .highlight {
-            background-color: #fffbe6; /* Màu vàng nhạt để nhấn mạnh */
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 5px solid #ffeb3b;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hướng dẫn sử dụng F2P BOT | AutoROK.vn</title>
+    <meta name="description" content="Hướng dẫn liên kết thiết bị, khởi động, xem màn hình và dừng F2P BOT qua Discord.">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#4a0d18">
+    <link rel="canonical" href="https://autorok.vn/guild.html">
+    <link rel="icon" type="image/png" href="image_0.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Hướng dẫn sử dụng Bot</h1>
-        
-        <div class="lang-switch">
-            <a href="#vietnamese">Tiếng Việt</a>
-            <a href="#english">English</a>
+    <a class="skip-link" href="#guide-main">Bỏ qua điều hướng</a>
+    <header class="site-header" data-header>
+        <div class="shell nav-wrap">
+            <a class="brand" href="index.html" aria-label="F2P BOT - Trang chủ"><img src="image_0.png" alt="" width="44" height="44"><span class="brand-copy"><strong>F2P BOT</strong><small>AUTOROK.VN</small></span></a>
+            <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="main-nav" data-nav-toggle><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính" data-nav>
+                <a href="index.html#features">Tính năng</a>
+                <a href="index.html#pricing">Bảng giá</a>
+                <a href="#vietnamese">Tiếng Việt</a>
+                <a href="#english">English</a>
+                <a class="button button-small button-panel" href="panel.html?lang=vi">Đăng nhập Panel <span aria-hidden="true">→</span></a>
+            </nav>
         </div>
+    </header>
 
-        <section id="vietnamese" class="guide-section">
-            <h2>🇻🇳 Tiếng Việt</h2>
-
-            <h3>Hướng dẫn sử dụng cho người mới</h3>
-            <p>Chào mừng bạn! Dưới đây là các bước đơn giản để bắt đầu thuê và sử dụng bot:</p>
-
-            <h4>Bước 1: Gửi Email và Mã</h4>
-            <p>Đầu tiên, bạn cần cung cấp <strong>Email</strong> (đã liên kết với tài khoản game) và <strong>Mã xác nhận</strong> (login code) cho admin.</p>
-            <img src="IMG_1909.jpeg" alt="Gửi email">
-            <img src="IMG_1917.jpeg" alt="Gửi mã">
-
-            <h4>Bước 2: Admin Gắn Quyền</h4>
-            <p>Sau khi nhận thông tin, Admin sẽ gán quyền sử dụng bot cho tài khoản của bạn. Khi thành công, bot sẽ gửi một tin nhắn xác nhận.</p>
-            <img src="IMG_1913.jpeg" alt="Admin gắn quyền">
-
-            <h4>Bước 3: Khởi động Bot (Lệnh `start`)</h4>
-            <p>Để bắt đầu, bạn chỉ cần gõ lệnh <code>start</code>. Bot sẽ khởi động và báo cáo trạng thái.</p>
-            <img src="IMG_1914.jpeg" alt="Lệnh Start">
-
-            <h4>Bước 4: Xem màn hình (Lệnh `show`)</h4>
-            <p>Sau khi bot đã khởi động, bạn có thể gõ lệnh <code>show</code> bất cứ lúc nào để bot chụp và gửi lại màn hình game hiện tại cho bạn.</p>
-            <img src="IMG_1916.jpeg" alt="Lệnh Show">
-
-            <h4>Bước 5: Tạm dừng Bot (Lệnh `stop`)</h4>
-            <p>Nếu bạn muốn tạm dừng bot, chỉ cần gõ lệnh <code>stop</code>. Khi nào muốn chạy lại, bạn chỉ cần gõ <code>start</code> là được.</p>
-            <img src="IMG_1915.jpeg" alt="Lệnh Stop">
-
-            <hr>
-
-            <h3>Cài đặt Bot (Tiếng Việt)</h3>
-            <p>Sau khi log được acc, bạn điền vào bảng để chỉnh sửa.</p>
-            
-            <img src="IMG_1911.jpg" alt="Cài đặt bot">
-            
-            <p class="highlight">
-                Những tính năng như <strong>Trợ giúp liên minh, Đóng góp liên minh, Nhận quà sự kiện, Rèn nguyên liệu</strong>... đều được <strong>tự động</strong>.
-                <br>
-                Chỉ có những chức năng được liệt kê dưới đây là bạn cần chỉnh để phù hợp với tài khoản của mình:
-            </p>
-            <ul>
-                <li>🔄 Bot đã được reset để cập nhật tính năng giới hạn gem trong ngày.</li>
-                <li>📌 Anh em đọc kỹ và báo mình nếu cần chỉnh sửa cài đặt.</li>
-                <li>⚙️ <strong>Cài đặt mặc định hiện tại:</strong></li>
-                <li>🪓 <strong>Đánh man rợ:</strong> 3 đạo quân khi AP > 500.</li>
-                <li>💎 <strong>Thu thập gem:</strong> giới hạn 2900 – 3000 gem/ngày với tối đa đạo quân.</li>
-                <li>📦 <strong>Sau khi đủ gem:</strong> → tự động chuyển sang thu thập ngô, gỗ, đá, vàng, mỏ liên minh.</li>
-                <li>⚔️ <strong>Luyện lính:</strong>
-                    <ul>
-                        <li>Bộ binh, Kỵ binh, Cung thủ = T4</li>
-                        <li>Xe = T1</li>
-                    </ul>
-                </li>
-                <li>📣 Nếu cần chỉnh <strong>Rally pháo đài</strong> hoặc <strong>Join rally</strong>, báo mình để tùy chỉnh.</li>
-            </ul>
+    <main id="guide-main">
+        <section class="guide-hero">
+            <div class="shell reveal">
+                <p class="eyebrow"><span></span> F2P BOT · QUICK START</p>
+                <h1>Từ liên kết thiết bị đến điều khiển từ xa.</h1>
+                <p>Hướng dẫn từng bước để bạn bắt đầu, kiểm tra màn hình và tạm dừng F2P BOT qua Discord.</p>
+                <div class="guide-nav"><a class="button button-primary" href="#vietnamese">Hướng dẫn tiếng Việt</a><a class="button button-ghost" href="#english">English guide</a></div>
+            </div>
         </section>
 
-        <hr>
+        <section class="guide-content">
+            <div class="shell">
+                <article class="guide-language" id="vietnamese">
+                    <header class="guide-language-header reveal">
+                        <div><p class="eyebrow"><span></span> TIẾNG VIỆT</p><h2>Thiết lập cho người mới</h2></div>
+                        <p>Chỉ gửi thông tin qua kênh hỗ trợ chính thức. Không gửi mật khẩu Discord; mã xác nhận chỉ dùng cho quy trình liên kết đã được đội ngũ hướng dẫn.</p>
+                    </header>
 
-        <section id="english" class="guide-section">
-            <h2>🇬🇧 English</h2>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="B1.jfif" alt="Minh họa gửi email liên kết cho bộ phận hỗ trợ" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>01</span><h3>Gửi email liên kết</h3><p>Liên hệ đội ngũ qua Discord hoặc Zalo chính thức và cung cấp email đã liên kết với tài khoản game theo hướng dẫn.</p></div>
+                    </div>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="B2.jfif" alt="Minh họa gửi mã xác nhận" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>02</span><h3>Cung cấp mã xác nhận</h3><p>Gửi mã trong đúng cuộc trò chuyện hỗ trợ để hoàn thành bước xác nhận. Không chia sẻ mã ở kênh công khai.</p></div>
+                    </div>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="B2real.jfif" alt="F2P BOT xác nhận gắn thiết bị" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>03</span><h3>Nhận xác nhận liên kết</h3><p>Sau khi thiết bị được gắn quyền, bot gửi phản hồi xác nhận. Từ thời điểm này, bạn có thể đăng nhập Panel bằng Discord đã liên kết.</p></div>
+                    </div>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="start5.jfif" alt="Lệnh start khởi động bot trên Discord" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>04</span><h3>Khởi động với <code>start</code></h3><p>Gõ <code>start</code> trong kênh điều khiển riêng. Chờ bot phản hồi thành công rồi mới gửi lệnh tiếp theo.</p></div>
+                    </div>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="show.jfif" alt="Lệnh show nhận ảnh màn hình game" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>05</span><h3>Kiểm tra bằng <code>show</code></h3><p>Dùng <code>show</code> để nhận ảnh màn hình hiện tại, giúp bạn xác nhận tài khoản và tác vụ đang chạy đúng trạng thái.</p></div>
+                    </div>
+                    <div class="guide-step reveal">
+                        <div class="guide-step-media"><img src="stop.jfif" alt="Lệnh stop dừng bot an toàn" loading="lazy"></div>
+                        <div class="guide-step-copy"><span>06</span><h3>Tạm dừng với <code>stop</code></h3><p>Khi cần sử dụng máy hoặc đổi tài khoản, gửi <code>stop</code> và chờ phản hồi đã dừng trước khi thao tác tiếp.</p></div>
+                    </div>
+                    <div class="guide-callout reveal"><h3>Mẹo thiết lập ban đầu</h3><p>Xác nhận ngưỡng AP, giới hạn Gem mỗi ngày, cấp lính cần train và cấu hình Rally với đội ngũ hỗ trợ. Sau khi đủ Gem, hệ thống có thể chuyển sang thu thập tài nguyên theo cấu hình đã thống nhất.</p></div>
+                </article>
 
-            <h3>How to Use the Bot (New User Guide)</h3>
-            <p>Welcome! Here are the simple steps to get started with the bot:</p>
-
-            <h4>Step 1: Send Your Email and Code</h4>
-            <p>First, you need to provide the <strong>Email</strong> (linked to your game account) and the <strong>Login Code</strong> (verification code) to the admin.</p>
-            <img src="IMG_1909.jpeg" alt="Send email">
-            <img src="IMG_1917.jpeg" alt="Send code">
-
-            <h4>Step 2: Admin Assigns Permission</h4>
-            <p>After receiving your info, the admin will assign bot permissions to your account. When successful, the bot will send a confirmation message.</p>
-            <img src="IMG_1913.jpeg" alt="Admin assigns permission">
-
-            <h4>Step 3: Start the Bot (Using `start`)</h4>
-            <p>To begin, simply type the <code>start</code> command. The bot will activate and report its status.</p>
-            <img src="IMG_1914.jpeg" alt="Start command">
-
-            <h4>Step 4: View the Screen (Using `show`)</h4>
-            <p>After the bot has started, you can type the <code>show</code> command at any time. The bot will take a screenshot of the game and send it to you.</p>
-            <img src="IMG_1916.jpeg" alt="Show command">
-
-            <h4>Step 5: Stop the Bot (Using `stop`)</h4>
-            <p>If you want to pause the bot, just type the <code>stop</code> command. When you're ready to run it again, simply type <code>start</code>.</p>
-            <img src="IMG_1915.jpeg" alt="Stop command">
-
-            <hr>
-            
-            <h3>Bot Settings (English)</h3>
-            <p>After you log in, please fill out the form to configure your settings.</p>
-            
-            <img src="IMG_1911.jpg" alt="Bot settings">
-
-            <p class="highlight">
-                Features like <strong>"Alliance Help," "Alliance Contributions," "Claiming Event Rewards,"</strong> and <strong>"Material Crafting"</strong> are all <strong>automatic</strong>.
-                <br>
-                Only the features listed below require your custom setup to fit your account:
-            </p>
-            <ul>
-                <li>🔄 The bot has been reset to update the daily gem limit feature.</li>
-                <li>📌 Please read these settings carefully and let me know if you need any changes.</li>
-                <li>⚙️ <strong>Current Default Settings:</strong></li>
-                <li>🪓 <strong>Attack Barbarians:</strong> Uses 3 armies when AP (Action Points) is over 500.</li>
-                <li>💎 <strong>Gather Gems:</strong> Daily limit of 2900 – 3000 gems, using the maximum number of armies.</li>
-                <li>📦 <strong>After Gem Limit is Reached:</strong> The bot will automatically switch to gathering Food, Wood, Stone, Gold, and Alliance Deposits.</li>
-                <li>⚔️ <strong>Troop Training:</strong>
-                    <ul>
-                        <li>Infantry, Cavalry, Archers = T4 (Tier 4)</li>
-                        <li>Siege = T1 (Tier 1)</li>
-                    </ul>
-                </li>
-                <li>📣 If you need to change settings for <strong>Rallying Forts</strong> or <strong>Joining Rallies</strong>, please let me know for a custom setup.</li>
-            </ul>
+                <article class="guide-language" id="english" lang="en">
+                    <header class="guide-language-header reveal">
+                        <div><p class="eyebrow"><span></span> ENGLISH</p><h2>Setup for new users</h2></div>
+                        <p>Only send information through an official support channel. Never share your Discord password; a verification code should only be used in the guided device-linking flow.</p>
+                    </header>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="B1.jfif" alt="Example of sending the linked email to support" loading="lazy"></div><div class="guide-step-copy"><span>01</span><h3>Send the linked email</h3><p>Contact the team through the official Discord or Zalo channel and provide the email linked to your game account as instructed.</p></div></div>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="B2.jfif" alt="Example verification code message" loading="lazy"></div><div class="guide-step-copy"><span>02</span><h3>Provide the verification code</h3><p>Send the code inside the correct private support conversation. Never post it in a public channel.</p></div></div>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="B2real.jfif" alt="F2P BOT device binding confirmation" loading="lazy"></div><div class="guide-step-copy"><span>03</span><h3>Receive the link confirmation</h3><p>Once permission is assigned, the bot confirms the linked device. You can then use the linked Discord account to sign in to the web panel.</p></div></div>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="start5.jfif" alt="Start command in Discord" loading="lazy"></div><div class="guide-step-copy"><span>04</span><h3>Start with <code>start</code></h3><p>Type <code>start</code> in your private control channel and wait for the success response before sending another command.</p></div></div>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="show.jfif" alt="Show command returning a game screenshot" loading="lazy"></div><div class="guide-step-copy"><span>05</span><h3>Check with <code>show</code></h3><p>Use <code>show</code> to receive a current screenshot and confirm that the right account and task are active.</p></div></div>
+                    <div class="guide-step reveal"><div class="guide-step-media"><img src="stop.jfif" alt="Stop command response in Discord" loading="lazy"></div><div class="guide-step-copy"><span>06</span><h3>Pause with <code>stop</code></h3><p>Before using the computer or switching accounts, send <code>stop</code> and wait for confirmation that the process has stopped.</p></div></div>
+                    <div class="guide-callout reveal"><h3>Initial configuration tip</h3><p>Confirm the AP threshold, daily Gem limit, troop tiers, and Rally settings with support. After reaching the Gem target, the system can switch to resource gathering based on the agreed configuration.</p></div>
+                </article>
+            </div>
         </section>
 
-    </div>
+        <section class="final-cta"><div class="shell final-cta-inner reveal"><div><p class="eyebrow eyebrow-light"><span></span> F2P BOT · AUTOROK.VN</p><h2>Sẵn sàng mở trung tâm điều khiển?</h2><p>Truy cập Panel bằng tài khoản Discord đã liên kết.</p></div><div class="final-actions"><a class="button button-gold" href="panel.html?lang=vi">Đăng nhập Panel <span>→</span></a><a class="button button-outline-light" href="index.html">Về trang chủ</a></div></div></section>
+    </main>
 
+    <footer class="site-footer">
+        <div class="shell footer-bottom"><span>© <span data-year>2026</span> F2P BOT · AutoROK.vn</span><a href="index.html">Trang chủ</a></div>
+    </footer>
 </body>
 </html>
