@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css?v=20260803-legacy2">
+    <link rel="stylesheet" href="style.css?v=20260803-legacy4">
 
     <style>
         /* CSS chia cột cho danh sách lệnh dài */
@@ -166,56 +166,74 @@
 
     <section id="guide" class="section-container">
         <div class="section-title">
-            <h2>BOT COMMANDS & GUIDE</h2>
+            <h2>BOT PANEL GUIDE</h2>
         </div>
 
-        <div class="guide-container">
-            <div class="guide-section">
-                <h3><i class="fa-solid fa-terminal"></i> Bot Control Commands</h3>
-                <div class="cmd-grid">
-    <div class="cmd-box">
-        <strong>Start</strong> <span>Start Bot.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Stop</strong> <span>Close bot safely.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Check</strong> <span>Check status of features and account.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Gem</strong> <span>Toggle gem farming.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Bar</strong> <span>Toggle barbarian hunting.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Join</strong> <span>Toggle joining fort rallies.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Rally</strong> <span>Toggle auto-starting rallies.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Collect</strong> <span>Toggle resource gathering.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Heal</strong> <span>Toggle healing troops (amount customizable).</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Train</strong> <span>Toggle training troops.</span>
-    </div>
-    <div class="cmd-box">
-        <strong>Mar</strong> <span>Toggle attacking marauders.</span>
-    </div>
-</div>
+        <div class="guide-container panel-guide">
+            <div class="panel-guide-top">
+                <div>
+                    <p class="panel-kicker">WEB CONTROL CENTER</p>
+                    <h3><i class="fa-solid fa-sliders"></i> Controls Available On Panel</h3>
+                    <p>Select a linked device, toggle individual features, and monitor its live state from the Web Panel.</p>
+                </div>
+                <div class="panel-guide-status"><span></span> Panel Online</div>
             </div>
 
-            <div class="guide-section" style="margin-top: 40px;">
-                <h3><i class="fa-solid fa-list-check"></i> Initial Setup Instructions</h3>
-                <ul class="step-list">
-                    <li><strong>Send Info:</strong> Join our Discord and contact the Owner. Provide your Email (linked to the game) and Login Code.</li>
-                    <li><strong>Admin Confirmation:</strong> The Admin will assign your account to our system. You will receive a confirmation message from the Bot on Discord.</li>
-                    <li><strong>Control Bot:</strong> Open a private chat with the Bot, type <code>start</code> to activate. Use <code>show</code> to monitor the screen and <code>stop</code> when necessary.</li>
-                </ul>
+            <div class="panel-control-grid">
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-play"></i><strong>Start Bot</strong><span class="panel-action panel-action-start">START</span></div>
+                    <p>Start the linked device directly from the Panel.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-stop"></i><strong>Stop Bot</strong><span class="panel-action panel-action-stop">STOP</span></div>
+                    <p>Stop the process safely before switching accounts.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-signal"></i><strong>Device Status</strong><span class="panel-action panel-action-live">LIVE</span></div>
+                    <p>View device state and its most recent update time.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-regular fa-gem"></i><strong>Gem Farming</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Enable or disable gem gathering with saved limits.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-skull"></i><strong>Barbarians</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Manage barbarian hunting and action limits.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-shield-halved"></i><strong>Join Rally</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Toggle automatic joining of fort rallies.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-chess-rook"></i><strong>Start Rally</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Start rallies automatically using the saved setup.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-wheat-awn"></i><strong>Resources</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Control Food, Wood, Stone, and Gold gathering.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-heart-pulse"></i><strong>Heal Troops</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Enable healing and configure troop amounts on Panel.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-helmet-safety"></i><strong>Train Troops</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Toggle automatic training by troop type.</p>
+                </article>
+                <article class="panel-control">
+                    <div class="panel-control-head"><i class="fa-solid fa-person-rifle"></i><strong>Marauders</strong><span class="panel-toggle">ON / OFF</span></div>
+                    <p>Manage automatic Marauder attacks from Panel.</p>
+                </article>
+            </div>
+
+            <div class="registration-block" id="registration">
+                <h3><i class="fa-solid fa-user-plus"></i> How To Register</h3>
+                <ol class="registration-steps">
+                    <li><span>01</span><div><strong>Sign in to Panel</strong><p>Use the Panel button on AutoROK.vn and sign in with your Discord account.</p></div></li>
+                    <li><span>02</span><div><strong>Register a service plan</strong><p>Contact the Owner through Discord or Zalo and choose a plan so Admin can activate your device.</p></div></li>
+                    <li><span>03</span><div><strong>Control the bot on Panel</strong><p>Open the linked device, use START/STOP, and manage each feature with its toggle.</p></div></li>
+                </ol>
+                <a href="panel.html?lang=en" class="guide-panel-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> OPEN WEB PANEL</a>
             </div>
         </div>
     </section>
@@ -339,3 +357,4 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     </script>
 </body>
 </html>
+
