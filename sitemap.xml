@@ -5,16 +5,18 @@
         <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://autorok.vn/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://autorok.vn/en.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://autorok.vn/" />
+        <xhtml:link rel="alternate" hreflang="vi" href="https://autorok.vn/en.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://autorok.vn/" />
     </url>
     <url>
         <loc>https://autorok.vn/en.html</loc>
         <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://autorok.vn/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://autorok.vn/en.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://autorok.vn/" />
+        <xhtml:link rel="alternate" hreflang="vi" href="https://autorok.vn/en.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://autorok.vn/" />
     </url>
     <url>
         <loc>https://autorok.vn/guild.html</loc>
