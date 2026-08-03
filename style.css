@@ -669,7 +669,7 @@ header {
         url('f2p-brand.jpg') center 42% / cover no-repeat;
 }
 .hero::before {
-    content: "AUTO RISE OF KINGDOMS  •  REMOTE CONTROL  •  F2P BOT";
+    content: "AUTO RISE OF KINGDOMS  •  WEB PANEL  •  F2P BOT";
     margin-bottom: 22px;
     color: #f9c85e;
     font-size: 0.68rem;
