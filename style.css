@@ -666,10 +666,10 @@ header {
     background:
         linear-gradient(180deg, rgba(3, 6, 12, 0.72) 0%, rgba(5, 9, 17, 0.82) 62%, var(--bg-main) 100%),
         linear-gradient(90deg, rgba(3, 6, 12, .82), rgba(3, 6, 12, .34) 48%, rgba(3, 6, 12, .66)),
-        url('f2p-brand.jpg') center 42% / cover no-repeat;
+        url('https://panel.autorok.vn/immortal-rok.png') center 42% / cover no-repeat;
 }
 .hero::before {
-    content: "AUTO RISE OF KINGDOMS  •  WEB PANEL  •  F2P BOT";
+    content: "AUTO RISE OF KINGDOMS  •  WEB PANEL  •  IMMORTAL ROK";
     margin-bottom: 22px;
     color: #f9c85e;
     font-size: 0.68rem;
@@ -840,7 +840,7 @@ header {
     border-bottom: 1px solid rgba(245,173,40,.13);
     background:
         linear-gradient(115deg, rgba(5,9,17,.97), rgba(20,28,46,.9), rgba(5,9,17,.97)),
-        url('f2p-brand.jpg') center 58% / cover;
+        url('https://panel.autorok.vn/immortal-rok.png') center 58% / cover;
 }
 .cta-section::before {
     content: "";
@@ -1240,4 +1240,209 @@ footer { padding: 34px 20px; border-top: 0; background: #050811; color: #758195;
     .mobile-action { gap: 4px; padding-inline: 5px; font-size: .62rem; }
     .logo { font-size: 1.12rem; }
     .logo i { width: 34px; height: 34px; }
+}
+
+/* ==========================================================
+   IMMORTAL ROK — shared visual identity with panel.autorok.vn
+   The browser favicon intentionally remains image_0.png (ROK).
+   ========================================================== */
+:root {
+    color-scheme: dark;
+    --bg-main: #070406;
+    --bg-card: #120b10;
+    --bg-card-hover: #1a0d13;
+    --primary: #ff3039;
+    --primary-hover: #ff5961;
+    --text-light: #fffafa;
+    --text-muted: #b5a8ae;
+    --border-color: rgba(255, 70, 78, .2);
+    --panel: rgba(18, 10, 15, .88);
+    --panel-strong: rgba(11, 6, 9, .97);
+    --gold-soft: rgba(255, 48, 57, .13);
+    --shadow-soft: 0 24px 70px rgba(0, 0, 0, .48);
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 48, 57, .4), 0 12px 32px rgba(255, 30, 42, .2); }
+    70% { box-shadow: 0 0 0 12px rgba(255, 48, 57, 0), 0 14px 38px rgba(255, 30, 42, .28); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 48, 57, 0), 0 12px 32px rgba(255, 30, 42, .2); }
+}
+
+body {
+    background:
+        radial-gradient(circle at 14% 16%, rgba(126, 10, 22, .16), transparent 30%),
+        radial-gradient(circle at 88% 58%, rgba(255, 30, 42, .07), transparent 27%),
+        #070406;
+}
+
+body::before {
+    opacity: .22;
+    background-image:
+        linear-gradient(rgba(255, 67, 75, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 67, 75, .025) 1px, transparent 1px);
+}
+
+header {
+    background: rgba(7, 3, 6, .88);
+    border-bottom-color: rgba(255, 48, 57, .18);
+    box-shadow: 0 12px 46px rgba(0, 0, 0, .46), 0 0 34px rgba(134, 6, 19, .08);
+}
+
+.logo {
+    color: #fff;
+    text-shadow: 0 0 14px rgba(255, 255, 255, .12);
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 66, 74, .56);
+    border-radius: 11px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(255, 30, 42, .3), inset 0 0 10px rgba(255, 30, 42, .16);
+}
+
+.logo span { white-space: nowrap; }
+.logo strong { color: #ff4a52; font: inherit; text-shadow: 0 0 13px rgba(255, 38, 48, .46); }
+.nav-links > a { color: #d9d0d4; }
+.nav-links > a::after { background: linear-gradient(90deg, #ff1e2b, #ff6870); }
+.nav-links a:hover,
+.lang-switch a.active,
+.lang-switch a:hover { color: #fff; text-shadow: 0 0 10px rgba(255, 48, 57, .36); }
+.lang-switch a.active { border-bottom-color: var(--primary); }
+
+.btn-panel,
+.btn-primary,
+.gateway-content .button {
+    color: #fff;
+    border-color: rgba(255, 106, 112, .62);
+    background: linear-gradient(135deg, #ff3d46, #bf0b19);
+    box-shadow: 0 10px 30px rgba(220, 12, 29, .26), inset 0 1px rgba(255,255,255,.18);
+}
+
+.btn-panel:hover,
+.btn-primary:hover,
+.gateway-content .button:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #ff5961, #da1120);
+    box-shadow: 0 14px 36px rgba(224, 15, 31, .36), 0 0 18px rgba(255, 48, 57, .18);
+}
+
+.btn-outline {
+    color: #fff;
+    border-color: rgba(255, 87, 94, .72);
+    background: rgba(9, 4, 7, .66);
+    box-shadow: inset 0 0 16px rgba(255, 40, 50, .06), 0 0 14px rgba(255, 40, 50, .1);
+}
+
+.btn-outline:hover {
+    color: #fff;
+    background: rgba(188, 10, 25, .72);
+    box-shadow: 0 0 22px rgba(255, 42, 52, .24);
+}
+
+.hero {
+    background:
+        linear-gradient(180deg, rgba(5, 2, 4, .68) 0%, rgba(7, 3, 6, .82) 68%, #070406 100%),
+        radial-gradient(circle at 50% 45%, rgba(191, 8, 24, .22), transparent 38%),
+        url('https://panel.autorok.vn/immortal-rok.png') center 45% / min(76vw, 900px) auto no-repeat,
+        #050204;
+}
+
+.hero::before {
+    content: "IMMORTAL ROK  •  AUTO RISE OF KINGDOMS  •  WEB PANEL";
+    color: #ff6970;
+    text-shadow: 0 0 14px rgba(255, 38, 49, .38);
+}
+
+.hero::after { box-shadow: inset 0 0 190px rgba(0, 0, 0, .78); }
+.hero h1 { color: #fff; text-shadow: 0 7px 28px rgba(0,0,0,.84), 0 0 8px rgba(255,255,255,.1); }
+.hero h1 span {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,.18), 0 0 24px rgba(255, 34, 45, .48);
+}
+.hero p { color: #ddd3d7; }
+
+.premium-highlights {
+    border-color: rgba(255, 58, 67, .24) !important;
+    background: linear-gradient(145deg, rgba(25, 12, 19, .97), rgba(9, 5, 8, .98)) !important;
+    box-shadow: 0 30px 84px rgba(0,0,0,.5), 0 0 36px rgba(172, 8, 22, .08) !important;
+}
+.premium-highlights::before { background: linear-gradient(90deg, transparent, rgba(255, 68, 76, .9), transparent); }
+.premium-highlights .section-title h2 { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,.1); }
+.premium-card { border: 1px solid rgba(255, 74, 82, .08); background: rgba(255,255,255,.018) !important; }
+.premium-card .premium-gem,
+.premium-card .premium-tech,
+.premium-card .premium-shield { color: #ff4650; text-shadow: 0 0 16px rgba(255, 37, 49, .42); }
+
+.section-title h2::after { background: linear-gradient(90deg, #a70413, #ff3943, #ff747a); box-shadow: 0 0 16px rgba(255, 35, 46, .34); }
+.service-card,
+.feature-item,
+.guide-container {
+    border-color: rgba(255, 69, 77, .14);
+    background: linear-gradient(150deg, rgba(24, 12, 18, .94), rgba(9, 6, 8, .98));
+}
+.service-card::before { background: linear-gradient(90deg, transparent, rgba(255, 48, 57, .72), transparent); }
+.service-card:nth-child(3) { border-color: rgba(255, 59, 68, .48); box-shadow: 0 24px 64px rgba(0,0,0,.38), 0 0 24px rgba(203, 7, 23, .1); }
+.service-card:hover,
+.feature-item:hover { border-color: rgba(255, 70, 78, .5); box-shadow: 0 22px 52px rgba(0,0,0,.44), 0 0 24px rgba(211, 10, 27, .14); }
+.service-price,
+.service-features li i,
+.feature-item i,
+.guide-section h3,
+.panel-guide-top h3 i,
+.panel-kicker { color: #ff4c55; text-shadow: 0 0 12px rgba(255, 39, 50, .26); }
+.service-features li { color: #cfc3c8; }
+.btn-block {
+    color: #fff;
+    border-color: rgba(255, 65, 74, .64);
+    background: rgba(174, 7, 22, .16);
+}
+.service-card:hover .btn-block { color: #fff; background: linear-gradient(135deg, #ff3d46, #b90817); box-shadow: 0 0 20px rgba(255, 36, 47, .26); }
+
+.panel-guide { border-color: rgba(255, 58, 67, .2); }
+.panel-guide::before { background: radial-gradient(circle at 86% 0%, rgba(255, 35, 45, .12), transparent 42%); }
+.panel-control { border-color: rgba(255, 71, 79, .11); background: rgba(15, 8, 12, .72); }
+.panel-control:hover { border-color: rgba(255, 72, 80, .34); }
+.panel-guide-status { color: #ff9ca1; border-color: rgba(255, 55, 64, .24); background: rgba(151, 5, 18, .16); }
+.panel-guide-status span { background: #ff3440; box-shadow: 0 0 12px rgba(255, 40, 51, .6); }
+.guide-panel-link { color: #fff; background: linear-gradient(135deg, #ff3d46, #b90817); box-shadow: 0 12px 30px rgba(218, 10, 28, .2); }
+.guide-panel-link:hover { box-shadow: 0 16px 34px rgba(222, 12, 29, .3); }
+
+.video-wrapper > div { border-color: rgba(255, 57, 66, .32) !important; }
+.cta-section {
+    border-color: rgba(255, 54, 63, .16);
+    background:
+        linear-gradient(115deg, rgba(7,3,6,.98), rgba(32,10,17,.9), rgba(7,3,6,.98)),
+        url('https://panel.autorok.vn/immortal-rok.png') center 48% / cover;
+}
+.cta-section::before { background: radial-gradient(circle at 50% 0%, rgba(255, 35, 46, .15), transparent 48%); }
+footer { background: #050204; color: #8f8187; }
+
+.gateway-page { background: radial-gradient(circle at 50% 8%, #3b0710 0%, #13070d 42%, #050204 100%); }
+.gateway-card { border-color: rgba(255, 58, 67, .3); background: rgba(13, 7, 11, .95); box-shadow: 0 38px 96px rgba(0,0,0,.62), 0 0 42px rgba(155, 5, 19, .1); }
+.gateway-art { background: #030102; }
+.gateway-art img { aspect-ratio: 16/7; object-position: center 47%; }
+.gateway-logo { border-color: #16090f; box-shadow: 0 0 18px rgba(255, 32, 44, .36); }
+.gateway-content .eyebrow { color: #ff6670; }
+.gateway-progress span { background: linear-gradient(90deg, #9f0615, #ff3944, #ff7279); }
+
+@media (max-width: 768px) {
+    .nav-container {
+        border-top-color: rgba(255, 48, 57, .16);
+        background: rgba(7, 3, 6, .99);
+    }
+    .hero {
+        background:
+            linear-gradient(180deg, rgba(5, 2, 4, .62), rgba(7, 3, 6, .87) 72%, #070406),
+            radial-gradient(circle at 50% 42%, rgba(191, 8, 24, .25), transparent 38%),
+            url('https://panel.autorok.vn/immortal-rok.png') center 42% / 118vw auto no-repeat,
+            #050204;
+    }
+    .mobile-panel { color: #fff; border-color: rgba(255, 93, 100, .7); background: linear-gradient(135deg, #ff3b45, #b90817); }
+}
+
+@media (max-width: 380px) {
+    .logo img { width: 34px; height: 34px; }
+    .logo { font-size: .94rem; }
 }

@@ -125,7 +125,7 @@ nav a {
     background-image:
         linear-gradient(90deg, rgba(7, 9, 14, 0.98) 0%, rgba(7, 9, 14, 0.88) 48%, rgba(7, 9, 14, 0.7) 100%),
         linear-gradient(0deg, var(--bg) 0%, transparent 32%),
-        url("f2p-brand.jpg");
+        url("https://panel.autorok.vn/immortal-rok.png");
     background-position: center;
     background-size: cover;
 }
@@ -420,5 +420,62 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+}
+
+/* IMMORTAL ROK visual identity. The favicon remains the original ROK icon. */
+:root {
+    --bg: #070406;
+    --surface: #120b10;
+    --surface-soft: #1a0d13;
+    --border: rgba(255, 67, 75, .22);
+    --gold: #ff424c;
+    --gold-soft: #ff9ba0;
+    --text: #fffafa;
+    --muted: #b7aab0;
+}
+
+body {
+    background:
+        radial-gradient(circle at 10% 18%, rgba(143, 6, 20, .14), transparent 28%),
+        radial-gradient(circle at 90% 62%, rgba(255, 33, 44, .06), transparent 26%),
+        var(--bg);
+}
+
+.site-header {
+    background: rgba(7, 3, 6, .9);
+    box-shadow: 0 12px 42px rgba(0,0,0,.38);
+}
+.brand img { border: 1px solid rgba(255, 73, 81, .52); object-fit: cover; box-shadow: 0 0 14px rgba(255, 29, 42, .28); }
+.brand span { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,.08); }
+.brand small { color: #ff626a; }
+.panel-button,
+.primary-button { color: #fff; background: linear-gradient(135deg, #ff3d46, #b90817); box-shadow: 0 10px 30px rgba(218, 10, 28, .25), inset 0 1px rgba(255,255,255,.16); }
+.secondary-button { border-color: rgba(255, 81, 89, .46); background: rgba(10, 5, 8, .64); }
+
+.hero {
+    background-image:
+        linear-gradient(90deg, rgba(7, 3, 6, .98) 0%, rgba(7, 3, 6, .88) 50%, rgba(7, 3, 6, .62) 100%),
+        linear-gradient(0deg, var(--bg) 0%, transparent 34%),
+        url("https://panel.autorok.vn/immortal-rok.png");
+    background-position: center;
+    background-size: cover;
+}
+.hero::after { background: linear-gradient(90deg, transparent, #ff3d47, transparent); }
+h1 span { color: #ff4b54; text-shadow: 0 0 20px rgba(255, 40, 51, .34); }
+.steps li { background: linear-gradient(145deg, rgba(26, 13, 20, .98), rgba(10, 6, 9, .99)); }
+.panel-card { background: radial-gradient(circle at 100% 0%, rgba(255, 45, 55, .14), transparent 42%), var(--surface); }
+.control-grid article { background: #170c12; border-color: rgba(255, 73, 81, .09); }
+.security-note { background: rgba(255, 39, 50, .07); }
+footer { background: #050204; border-top-color: rgba(255, 61, 70, .12); }
+footer img { border: 1px solid rgba(255, 69, 77, .42); object-fit: cover; box-shadow: 0 0 14px rgba(255, 27, 39, .2); }
+
+@media (max-width: 860px) {
+    .hero {
+        background-image:
+            linear-gradient(180deg, rgba(7, 3, 6, .7), rgba(7, 3, 6, .94) 76%),
+            url("https://panel.autorok.vn/immortal-rok.png");
+        background-position: center;
+        background-size: cover;
     }
 }
