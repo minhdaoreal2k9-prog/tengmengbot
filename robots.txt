@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autorok.vn/sitemap.xml
+Sitemap: https://immo-rok.com/sitemap.xml

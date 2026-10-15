@@ -1804,3 +1804,13 @@ body { font-weight: 500; }
         animation: none !important;
     }
 }
+
+/* Search-friendly, visible answers to common product questions. */
+.faq-section .section-title p { max-width: 760px; margin: 18px auto 0; color: #c3b9be; line-height: 1.7; text-align: center; }
+.faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.faq-card { padding: 26px; border: 1px solid rgba(255,58,67,.2); border-radius: 18px; background: rgba(255,255,255,.025); }
+.faq-card h3 { margin: 0 0 14px; color: #fff; font-size: 1.05rem; line-height: 1.5; }
+.faq-card p { margin: 0; color: #c3b9be; font-size: .92rem; line-height: 1.8; }
+.faq-card a { color: #ff9ca1; text-decoration: underline; text-underline-offset: 3px; }
+.faq-card a:focus-visible { outline: 2px solid #ff9ca1; outline-offset: 4px; }
+@media (max-width: 700px) { .faq-grid { grid-template-columns: 1fr; } .faq-card { padding: 22px; } }
